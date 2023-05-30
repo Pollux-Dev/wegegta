@@ -13,6 +13,7 @@ module.exports = {
     { type: 'docs', section: 'Documentation', hidden: false },
     { type: 'perf', section: 'Performance Updates', hidden: false },
     { type: 'prog', section: 'Development Progress', hidden: false },
+    { type: 'config', section: 'Configuration Progress', hidden: false },
 
     // Other changes that don't modify src or test files
     { type: 'chore', section: internalSection, hidden: false },

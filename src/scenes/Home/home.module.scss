@@ -1,0 +1,14 @@
+@use "@/styles/" as s;
+
+.container{
+  width: 100%;
+
+   @include s.padding(top, 38rem);
+
+  & :local{
+
+    .wrapper{
+
+    }
+  }
+}

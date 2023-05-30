@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './layout.module.scss';
-import { Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import FixedLayer from '@/components/commons/FixedLayer';
 
@@ -15,10 +14,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       <FixedLayer />
 
       <motion.div className={s.root}>
-        <main>
-          <Typography variant="h5">Contact Page</Typography>
-          {children}
-        </main>
+        <main>{children}</main>
       </motion.div>
     </>
   );

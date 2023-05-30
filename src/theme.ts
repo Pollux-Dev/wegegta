@@ -23,8 +23,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'capitalize',
-          borderRadius: '5000px',
-          // lineHeight: '100%'
+          borderRadius: '5000px', // lineHeight: '100%'
         },
       },
     },
@@ -37,12 +36,6 @@ const theme = createTheme({
     },
   },
   palette: {
-    background: {
-      default: '#0D0D0D',
-    },
-    text: {
-      primary: '#fff',
-    },
     primary: {
       main: '#AEAFFF',
     },
@@ -55,6 +48,5 @@ const theme = createTheme({
   },
 });
 
-// responsiveFontSizes(theme, {})
 
 export default theme;
