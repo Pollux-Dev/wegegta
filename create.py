@@ -21,7 +21,7 @@ if not name[0].isupper():
     print('Are You sure Compoenent with SMALL - Letters : - ?'.replace('-', name))
     exit()
 
-styleTxt = """@use '@/styles/index.scss' as s;
+styleTxt = """@use 'src/styles/index' as s;
 
 .container{
   width: 100%;

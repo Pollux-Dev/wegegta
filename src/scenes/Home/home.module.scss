@@ -1,14 +1,14 @@
-@use "@/styles/" as s;
+@use 'src/styles/index' as s;
 
-.container{
+.container {
+  position: relative;
   width: 100%;
+  padding-bottom: 30rem;
 
-   @include s.padding(top, 38rem);
+  & :local {
 
-  & :local{
-
-    .wrapper{
-
+    .newsletter {
+      margin: 10rem 0;
     }
   }
 }

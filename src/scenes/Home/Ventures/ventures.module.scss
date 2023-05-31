@@ -1,0 +1,76 @@
+@use '@/styles/index.scss' as s;
+
+.container {
+  width: 100%;
+  margin-top: 10rem;
+
+  // @include s.margin(top, 10rem);
+  // @include s.padding(bottom, 8rem);
+
+  & :local {
+
+    .wrapper {
+      max-width: 90rem;
+      margin: 0 auto;
+
+      //border: 1px solid red;
+
+      header {
+        display: flex;
+        flex-flow: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          max-width: 55ch;
+          font-weight: 300;
+          letter-spacing: .02vmax;
+          text-align: center;
+        }
+      }
+
+      .cards {
+        display: flex;
+        gap: 2rem;
+        margin-top: 6rem;
+        //align-items: center;
+
+        //border: 1px solid red;
+
+        .card {
+          height: auto;
+          flex: 1;
+          padding: 3rem 3rem 0;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          justify-content: center;
+
+          border: 1px solid #000;
+
+          .card_img {
+            flex: 1;
+          }
+
+          p {
+            letter-spacing: .02vmax;
+            text-align: center;
+          }
+
+          button {
+            margin-top: 3rem;
+            border-top: 1px solid #000;
+            width: calc(100% + 6rem);
+            border-radius: 0;;
+            padding: 1rem 0;
+            font-size: 1rem;
+            letter-spacing: .02vmax;
+            //width: 100%;
+
+          }
+        }
+      }
+    }
+  }
+}

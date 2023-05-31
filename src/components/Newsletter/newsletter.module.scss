@@ -1,0 +1,81 @@
+@use 'src/styles/index' as s;
+
+.container {
+  position: relative;
+  width: 100%;
+  background-color: s.$clrs-accent;
+  padding: 5rem;
+  color: white;
+
+  h4 {
+    color: white;
+  }
+
+  // @include s.margin(top, 10rem);
+  // @include s.padding(bottom, 8rem);
+
+  & :local {
+
+    .ship1, .ship2 {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .ship1 {
+      left: 0;
+    }
+
+    .ship2 {
+      right: 0;
+      left: initial;
+    }
+
+    .art {
+      position: absolute;
+    }
+
+
+    .wrapper {
+
+      max-width: 80rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 5rem;
+      margin: 0 auto;
+
+      //border: 1px solid #000;
+    }
+
+    .desc {
+      max-width: 55ch;
+      font-weight: 300;
+      letter-spacing: .02vmax;
+    }
+
+    .input {
+      display: flex;
+      gap: .5rem;
+      width: 100%;
+      max-width: 35rem;
+
+      //border: 1px solid red;
+
+      & > :first-child {
+        & * {
+          color: white;
+        }
+
+        background-color: rgba(0, 0, 0, 0.13);
+      }
+
+
+      button {
+        border-radius: 0;
+        background-color: white;
+        max-width: 12rem;
+        width: 100%;
+      }
+    }
+  }
+}

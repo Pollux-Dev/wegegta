@@ -1,0 +1,37 @@
+@use "@/styles/index.scss" as s;
+
+.container{
+  position: relative;
+  width: 100%;
+
+  & :local{
+
+    .hero_bg{
+      //position: absolute;
+      width: 100%;
+      //max-height: 90vh;
+
+      //border: 10px solid yellow;
+
+      img{
+        //object-fit: cover;
+        display: block;
+        width: 100% !important;
+        //height: 90vh !important;
+        //max-height: 90vh;
+      }
+    }
+
+    .hero_shape{
+      position: absolute;
+      left: 3%;
+      top: 38%;
+      max-width: 27rem;
+    }
+
+    .wrapper{
+      //border: 1px solid red;
+
+    }
+  }
+}
