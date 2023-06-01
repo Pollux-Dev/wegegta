@@ -1,16 +1,31 @@
 @use 'src/styles/index' as s;
 
-.container{
+.container {
+  position: relative;
   width: 100%;
-  padding-top: 8.5rem;
+  padding: 8.5rem 0;
 
   // @include s.margin(top, 10rem);
   // @include s.padding(bottom, 8rem);
 
-  & :local{
+  & :local {
 
-    .wrapper{
+    .decorator {
+      position: absolute;
+      top: 60%;
+      right: -8%;
+      width: 20rem;
+      height: 20rem;
+      //background-color: s.$clrs-accent;
+      border: 4rem solid s.$clrs-accent;
+      border-radius: 50%;
+      z-index: -1;
+    }
 
+    .wrapper {
+      display: flex;
+      flex-flow: column;
+      gap: 3rem;
       max-width: 90rem;
       margin: 0 auto;
 
@@ -19,7 +34,7 @@
         align-items: center;
         justify-content: center;
         //gap: 7rem;
-        border: 1px solid red;
+        //border: 1px solid red;
 
         img {
           max-width: 3.5rem;
@@ -29,6 +44,60 @@
         h3 {
           color: #8A5C28;
         }
+      }
+
+      .tab_header {
+        border: 1.5px solid gray;
+        width: max-content;
+        border-radius: 50000px;
+        padding: 1rem 3rem 0;
+        margin: 0 auto;
+      }
+
+      .products {
+        padding: 5rem;
+        border-radius: 2rem;
+        display: flex;
+        flex-flow: column;
+        gap: 6rem;
+      }
+
+      .p_list {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+        .product {
+          position: relative;
+          display: grid;
+
+
+          img {
+            object-fit: cover;
+            border-radius: 1rem;
+            //grid-column: 1/2;
+            //grid-row: 1/2;
+          }
+
+          p {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: .5rem 1rem;
+            margin-top: -1rem;
+            margin-left: 1rem;
+            font-weight: 600;
+            letter-spacing: .02vmax;
+            color: s.$clrs-accent;
+          }
+        }
+
+      }
+
+      .pagination {
+        margin: 0 auto;
       }
     }
   }

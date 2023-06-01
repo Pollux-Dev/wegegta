@@ -85,7 +85,7 @@ export default function TopNavBar() {
           </Link>
 
           <Button>
-            <Stack direction="row" spacing={1} alignItems="center">
+            <Stack direction="row" alignItems="center">
               <Phone />
               <Typography>+25190000000</Typography>
             </Stack>
