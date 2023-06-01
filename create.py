@@ -44,7 +44,10 @@ import s from './_.module.scss'
 const - = () => {
   return (
     <div className={s.container} >
+      <div className={s.wrapper}>
 
+
+      </div>
     </div>
   );
 };

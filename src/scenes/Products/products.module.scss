@@ -1,0 +1,35 @@
+@use 'src/styles/index' as s;
+
+.container{
+  width: 100%;
+  padding-top: 8.5rem;
+
+  // @include s.margin(top, 10rem);
+  // @include s.padding(bottom, 8rem);
+
+  & :local{
+
+    .wrapper{
+
+      max-width: 90rem;
+      margin: 0 auto;
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //gap: 7rem;
+        border: 1px solid red;
+
+        img {
+          max-width: 3.5rem;
+          object-fit: cover;
+        }
+
+        h3 {
+          color: #8A5C28;
+        }
+      }
+    }
+  }
+}

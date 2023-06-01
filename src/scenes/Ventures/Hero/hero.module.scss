@@ -1,0 +1,46 @@
+@use 'src/styles/index' as s;
+
+.container {
+  width: 100%;
+  background-color: s.$clrs-accent;
+  padding-top: 5rem;
+
+  & :local {
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      max-width: 95rem;
+      margin: 0 auto;
+      padding: 3rem 3rem 0;
+
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 7rem;
+        color: white;
+
+        img {
+          max-width: 3rem;
+        }
+
+        .desc {
+          //max-width: 50ch;
+          width: 100%;
+          font-weight: 400;
+          letter-spacing: .02vmax;
+          max-width: 50ch;
+          font-size: 1.05rem;
+        }
+
+        h3 {
+          color: inherit;
+        }
+      }
+
+      .right{
+
+      }
+    }
+  }
+}

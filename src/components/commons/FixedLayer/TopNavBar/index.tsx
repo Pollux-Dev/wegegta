@@ -68,7 +68,7 @@ export default function TopNavBar() {
             <Typography>About</Typography>
           </Link>
 
-          <Link href="/venture">
+          <Link href="/ventures">
             <Typography>Venture</Typography>
           </Link>
 
