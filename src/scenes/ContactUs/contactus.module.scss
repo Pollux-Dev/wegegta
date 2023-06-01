@@ -1,0 +1,72 @@
+@use 'src/styles/index' as s;
+
+.container {
+  width: 100%;
+  margin-top: 10vmax;
+
+  // @include s.margin(top, 10rem);
+  // @include s.padding(bottom, 8rem);
+
+  & :local {
+
+    .wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      max-width: 80rem;
+      border-radius: 2rem;
+      margin: 0 auto;
+      // box shadow
+      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+      padding: 3rem 7rem;
+      overflow: hidden;
+
+      .decoration {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 25%;
+        height: 100%;
+        background-color: s.$clrs-accent;
+        z-index: -1;
+      }
+
+      form {
+        display: flex;
+        flex-flow: column;
+        gap: 1rem;
+        //border: 1px solid red;
+
+        h2 {
+          color: s.$clrs-accent;
+
+          span {
+            color: black;
+            margin-right: 1rem;
+          }
+        }
+
+        button {
+          margin-top: 1rem;
+          color: white;
+          border-radius: 0;
+        }
+      }
+
+      .map {
+        padding: 2rem 0;
+        //border: 1px solid red;
+        img {
+          object-fit: cover;
+          display: block;
+        }
+      }
+
+      .contact_media {
+        margin-top: 1rem;
+      }
+    }
+
+  }
+}
