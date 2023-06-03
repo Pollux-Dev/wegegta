@@ -75,23 +75,6 @@ html {
 html,
 body {
   //height: 100%;
-
-  /*.mf-cursor {
-
-    &:before{
-      transform:scale(0.4);
-    }
-
-    &.-opaque {
-      mix-blend-mode:exclusion;
-
-      &:before {
-        opacity: 1;
-        transform: scale(1.32);
-        background:invert(#000);
-      }
-    }
-  }*/
 }
 
 * {
@@ -148,7 +131,7 @@ h6 {
   color: #8A5C28;
 }
 
-p{
+p {
   font-weight: 300;
 }
 

@@ -3,8 +3,9 @@
 .root {
   position: relative;
   width: 100%;
-  //max-width: 2460px;
   display: flex;
+  flex-flow: column;
+  //max-width: 2460px;
   //overflow: hidden;
 
   min-height: 100vh;

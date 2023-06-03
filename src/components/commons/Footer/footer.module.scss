@@ -1,0 +1,56 @@
+@use 'src/styles/index' as s;
+
+.container {
+  width: 100%;
+  margin-top: 10rem;
+  //padding: 5rem;
+
+  //border: 1px solid red;
+
+  & :local {
+
+    .wrapper {
+      display: flex;
+
+      .left {
+        display: grid;
+        place-items: center;
+        background-color: s.$clrs-accent;
+        color: white;
+        padding: 6rem;
+
+        & * {
+          color: inherit;
+        }
+
+        p {
+          max-width: 50ch;
+          font-weight: 300;
+        }
+      }
+
+      .right {
+        background-color: #F0EFEB;
+        width: 100%;
+        flex: 1;
+        padding: 6rem;
+
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        gap: 5rem;
+
+        img {
+          display: block;
+          margin-left: -30%;
+        }
+
+        .hor {
+          display: flex;
+          gap: 5rem;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

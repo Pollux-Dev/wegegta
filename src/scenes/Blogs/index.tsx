@@ -59,7 +59,7 @@ const Blogs = () => {
             </Stack>
           </div>
 
-          <Sidebar/>
+          <Sidebar />
         </div>
       </div>
     </div>

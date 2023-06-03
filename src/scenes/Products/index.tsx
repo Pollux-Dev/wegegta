@@ -57,8 +57,7 @@ const Products = () => {
 
   return (
     <div className={s.container}>
-
-      <div className={s.decorator}/>
+      <div className={s.decorator} />
 
       <div className={s.wrapper}>
         <header className={s.header}>
