@@ -4,8 +4,12 @@
   position: relative;
   width: 100%;
   background-color: s.$clrs-accent;
-  padding: 5rem;
+  padding: 5rem 3rem;
   color: white;
+
+  @include s.media-breakpoint-up(md){
+    padding: 5rem;
+  }
 
   h4 {
     color: white;
@@ -36,12 +40,13 @@
 
 
     .wrapper {
-
+      width: 100%;
       max-width: 80rem;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-evenly;
-      gap: 5rem;
+      gap: calc(2rem + 3vmax);
       margin: 0 auto;
 
       //border: 1px solid #000;

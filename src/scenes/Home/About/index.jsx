@@ -33,7 +33,7 @@ const About = () => {
     <div className={s.container}>
       <div className={s.wrapper}>
         <header className={s.header}>
-          <Stack spacing={2}>
+          <Stack gap={2} sx={{width: '100%'}}>
             <Image src={Grass} alt="grass" />
             <Typography variant="h3" noWrap>
               Farm Ecology <br />

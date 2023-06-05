@@ -11,19 +11,27 @@
 
     .wrapper {
       display: flex;
+      flex-wrap: wrap;
       gap: 5rem;
       justify-content: space-between;
       max-width: 90rem;
       margin: 0 auto;
+
       //border: 1px solid red;
+
+      @include s.media-breakpoint-up(md){
+        flex-flow: row;
+      }
 
     }
 
     .overlap_img{
       display: grid;
-      grid-template-columns: 1rem minmax(1fr, 3rem) minmax(1fr, 3rem) 1rem;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      width: 100%;
       max-width: 32rem;
       margin-top: 4rem;
+
       //border: 1px solid red;
 
       & > :first-child{
@@ -40,10 +48,26 @@
 
     }
 
+    .mission_wrapper{
+      //border: 1px solid red;
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+    }
+
     .mission{
       margin: 0 auto;
-      //border: 1px solid red;
-      width: max-content;
+      width: auto;
+      max-width: 100%;
+
+      header{
+        img{
+          object-fit: cover;
+          max-width: calc(3rem + 1vmax);
+        }
+      }
+
+      //border: 1px solid yellow;
 
       .desc{
         margin-bottom: 4rem;

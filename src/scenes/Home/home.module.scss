@@ -3,12 +3,20 @@
 .container {
   position: relative;
   width: 100%;
-  padding-bottom: 30rem;
+  max-width: 100%;
+  padding: 0 1.5rem;
+
+  //border: 1px solid red;
+  //overflow: hidden;
+
 
   & :local {
 
     .newsletter {
       margin: 10rem 0;
+
+      width: calc(100% + (1.5rem * 2));
+      transform: translateX(-1.5rem);
     }
   }
 }

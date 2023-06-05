@@ -1,15 +1,15 @@
 @use 'src/styles/index' as s;
 
 .container{
-  display: grid;
+  //display: grid;
   flex-flow: column;
   position: relative;
-  width: 100%;
+  width: calc(100% + 3rem);
+  transform: translateX(-1.5rem);
   margin-top: 10rem;
-  padding: 5rem 1rem;
+  padding: 5rem 0;
 
 
-  // use the sudo element to create half background
    &::before {
      content: '';
       position: absolute;
@@ -21,39 +21,64 @@
       z-index: -1;
    }
 
-  // @include s.margin(top, 10rem);
-  // @include s.padding(bottom, 8rem);
 
   & :local{
 
     .bg{
+
       //position: absolute;
       margin: 0 auto;
       grid-column: 1/2;
       grid-row: 1/2;
+      max-width: 100%;
+      object-fit: cover;
+      display: block;
+
+      img{
+        display: block;
+        width: 100vw;
+
+        border: 1px solid #000;
+        object-fit: cover;
+      }
+
     }
 
-    .wrapper{
+    .wrapper_{
       margin: 0 auto;
+      width: 100%;
       max-width: 90rem;
-      grid-column: 1/2;
-      grid-row: 1/2;
+      //grid-column: 1/2;
+      //grid-row: 1/2;
       display: flex;
       align-items: center;
 
-      //border: 1px solid black;
+      //border: 3px solid black;
+
+      .slider_wrapper {
+        max-width: 100%;
+      }
 
       .swiper{
-        //border: 1px solid red;
+        width: 100%;
+        padding: 1rem;
+
+        //border: 1px solid blue;
+
         .slide{
 
         }
 
         .blog_card{
-          background-color: white;
-          max-width: 50ch;
+          //background-color: white;
           margin: 0 auto;
           padding: 4rem;
+
+
+          @include s.media-breakpoint-up(md){
+            max-width: 60ch;
+          }
+
 
           .desc{
             letter-spacing: .02vmax;

@@ -5,12 +5,19 @@
   margin-top: 10rem;
   //padding: 5rem;
 
+  //display: none;
+
   //border: 1px solid red;
 
   & :local {
 
     .wrapper {
       display: flex;
+      flex-flow: column;
+
+      @include s.media-breakpoint-up(md){
+        flex-flow: row;
+      }
 
       .left {
         display: grid;

@@ -33,7 +33,7 @@ const Ventures = () => {
       <div className={s.wrapper}>
         <header>
           <Image src={SupIcon} alt="grass" />
-          <Typography variant="h3" noWrap>
+          <Typography variant="h3" >
             Our Business Ventures
           </Typography>
           <Typography variant="body1">

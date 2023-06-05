@@ -33,7 +33,7 @@ const Blog = () => {
 
         <div className={s.slider}>
           <Swiper
-            // loop
+            loop
             slidesPerView={'auto'}
             spaceBetween={30}
             // centeredSlides={true}

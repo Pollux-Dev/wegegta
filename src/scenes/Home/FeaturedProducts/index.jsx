@@ -31,7 +31,7 @@ const FeaturedProducts = () => {
       <div className={s.wrapper}>
         <header>
           <Image src={SupIcon} alt="grass" />
-          <Typography variant="h3" noWrap>
+          <Typography variant="h3">
             Featured Products
           </Typography>
           <Typography variant="body1">

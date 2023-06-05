@@ -4,15 +4,15 @@
   width: 100%;
   margin-top: 10rem;
 
-  // @include s.margin(top, 10rem);
-  // @include s.padding(bottom, 8rem);
+  //border: 1px solid #000;
 
   & :local {
 
     .wrapper {
       margin: 0 auto;
-      //max-width: 90rem;
-      margin-left: calc((100vw - 80rem) / 2);
+      max-width: 90rem;
+      //overflow-x: visible;
+      //margin-left: calc((100vw - 80rem) / 2);
 
 
       .header {
@@ -41,17 +41,23 @@
       .slider {
         margin-top: 4rem;
         padding: .3rem;
+        max-width: 100%;
+        //overflow: hidden;
+
         //width: max-content;
-        //border: 1px solid #000;
+        //border: 1px solid red;
 
         .swiper {
-          width: 100%;
-          //border: 1px solid red;
-          //width: max-content;
+          //width: 100%;
+          max-width: max-content;
+          //border: 1px solid blue;
+          //overflow-x: visible;
 
 
           .slide {
             max-width: 50ch;
+            width: 100%;
+            //border: 1px solid red;
           }
 
           .blog_card {

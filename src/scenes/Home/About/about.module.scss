@@ -17,8 +17,17 @@
 
       .header {
         display: flex;
+        flex-wrap: wrap;
+        flex-flow: column;
         align-items: center;
-        gap: 7rem;
+        gap: 2rem;
+
+        //border: 1px solid red;
+
+        @include s.media-breakpoint-up(md) {
+          flex-flow: row;
+          gap: 6rem;
+        }
 
         .about_desc {
           //max-width: 50ch;
@@ -41,10 +50,10 @@
       .cards {
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         gap: 2rem;
         margin-top: 4rem;
-
 
         .card {
           flex: 1;

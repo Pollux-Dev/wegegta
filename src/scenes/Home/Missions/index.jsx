@@ -16,9 +16,9 @@ const Missions = () => {
           <Image src={Check1} alt="checken - 1" />
         </div>
 
-        <div>
+        <div className={s.mission_wrapper}>
           <div className={s.mission}>
-            <Stack>
+            <Stack component='header'>
               <Image src={SubIcon} alt="grass" />
               <Typography variant="h4">Wegegta’s Values & Vision</Typography>
             </Stack>
