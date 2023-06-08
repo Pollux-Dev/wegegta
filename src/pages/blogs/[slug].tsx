@@ -3,7 +3,7 @@ import { fetchAPI } from '@/lib/api';
 import ArticlePage from '@/scenes/Article';
 import { ApiArticleArticle, ApiCategoryCategory } from '../../../strapi';
 
-const Article = ({ article, categories }) => {
+const Article = ({ article, categories }: any) => {
   const seo = {
     metaTitle: article.attributes.title,
     metaDescription: article.attributes.description,
@@ -20,10 +20,10 @@ const Article = ({ article, categories }) => {
 };
 
 export async function getStaticPaths() {
-  const articlesRes = await fetchAPI('/articles', { fields: ['slug'] });
+  const articlesRes: any = await fetchAPI('/articles', { fields: ['slug'] });
 
   return {
-    paths: articlesRes.data.map((article) => ({
+    paths: articlesRes.data.map((article: any) => ({
       params: {
         slug: article.attributes.slug,
       },
@@ -32,7 +32,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   const articlesRes: ApiArticleArticle = await fetchAPI('/articles', {
     filters: {
       slug: params.slug,
@@ -46,7 +46,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      article: articlesRes.data[0] as ApiArticleArticle,
+      article: (articlesRes as any).data[0] as ApiArticleArticle,
       categories: categoriesRes as ApiCategoryCategory,
     },
     revalidate: 1,
