@@ -33,7 +33,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const articlesRes : ApiArticleArticle = await fetchAPI('/articles', {
+  const articlesRes: ApiArticleArticle = await fetchAPI('/articles', {
     filters: {
       slug: params.slug,
     },

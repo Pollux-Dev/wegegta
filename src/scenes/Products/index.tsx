@@ -71,7 +71,7 @@ const Products = () => {
 
         <TabContext value={tabIdx}>
           <TabList
-            component='header'
+            component="header"
             onChange={handleChange}
             className={s.tab_header}
             // orientation="vertical"
