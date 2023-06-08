@@ -7,10 +7,14 @@
   padding-left: 1.5rem;
   padding-top: 5rem;
   border-left: 2px solid lightgray;
-  display: flex;
+  display: none;
   flex-flow: column;
   gap: 3rem;
 
+
+  @include s.media-breakpoint-up(md){
+    display: flex;
+  }
 
   & :local {
 

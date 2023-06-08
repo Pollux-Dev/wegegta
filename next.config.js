@@ -3,7 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [],
+    domains: [
+      'localhost',
+      'https://wegegta-backend.onrender.com',
+      'wegegta-backend.onrender.com',
+    ],
   },
   modularizeImports: {
     '@mui/material': {
@@ -18,7 +22,7 @@ const nextConfig = {
   },
   experimental: {},
   compiler: {
-    removeConsole: true,
+    removeConsole: false,
   },
 };
 

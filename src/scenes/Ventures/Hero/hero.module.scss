@@ -3,22 +3,36 @@
 .container {
   width: 100%;
   background-color: s.$clrs-accent;
-  padding-top: 5rem;
+  padding-top: 3rem;
+
+  @include s.media-breakpoint-up(md){
+    padding-top: 5rem;
+  }
 
   & :local {
 
     .wrapper {
       display: flex;
+      flex-flow: column;
+      gap: 2rem;
       justify-content: space-between;
       max-width: 95rem;
       margin: 0 auto;
       padding: 3rem 3rem 0;
+
+      @include s.media-breakpoint-up(md){
+        flex-flow: row;
+        gap: .2rem;
+      }
 
       .header {
         display: flex;
         align-items: center;
         gap: 7rem;
         color: white;
+        padding: 1rem;
+
+        //border: 1px solid blue;
 
         img {
           max-width: 3rem;
@@ -39,7 +53,13 @@
       }
 
       .right{
+        //max-width: 80%;
+        max-width: calc(20rem + 15vw);
+        margin: 0 auto;
 
+        @include s.media-breakpoint-up(md){
+          max-width: 30rem;
+        }
       }
     }
   }

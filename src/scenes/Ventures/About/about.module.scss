@@ -1,9 +1,14 @@
-@use '@/styles/index.scss' as s;
+@use 'src/styles/index' as s;
 
 .container {
   width: 100%;
 
-  margin-top: 8rem;
+  margin-top: 2rem;
+  padding: 1rem;
+
+  @include s.media-breakpoint-up(md) {
+    margin-top: 8rem;
+  }
 
   // @include s.margin(top, 10rem);
   // @include s.padding(bottom, 8rem);
@@ -41,6 +46,7 @@
       .cards {
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         gap: 2rem;
         margin-top: 4rem;

@@ -2,7 +2,7 @@
 
 .container {
   width: 100%;
-  padding: 8.5rem 0;
+  padding: 8.5rem 1.7rem;
 
   // @include s.margin(top, 10rem);
   // @include s.padding(bottom, 8rem);
@@ -30,10 +30,13 @@
       }
 
       .left {
-        flex: .75;
-        padding-right: 2rem;
+        width: 100%;
         //border: 1px solid red;
-        //margin-top: 6rem;
+
+        @include s.media-breakpoint-up(md) {
+          flex: .75;
+          padding-right: 2rem;
+        }
       }
 
       .featured {
@@ -42,12 +45,17 @@
         border: 1px solid lightgray;
         border-radius: .5rem;
 
+
         .info {
           padding: 1.5rem;
           display: flex;
           flex-flow: column;
           gap: 1rem;
-          max-width: 20rem;
+          max-width: 24ch;
+
+          @include s.media-breakpoint-up(md) {
+            max-width: 50ch;
+          }
 
           // the chip
           & > :first-child {
@@ -60,43 +68,69 @@
           }
 
           .title {
-            font-size: 3rem;
-            letter-spacing: 0;
+            font-size: 1.8rem;
             line-height: 100%;
-            // fill all available spaces and break down with ellipsis and hyphen
-            //display: -webkit-box;
-            //-webkit-line-clamp: 4;
-            //-webkit-box-orient: vertical;
-            //overflow: hidden;
-            //text-overflow: ellipsis;
-            //word-break: break-word;
-            //word-wrap: break-word;
             hyphens: auto;
+            //overflow: hidden;
+            //white-space: pre-wrap;
+            word-break: keep-all;
+            //text-overflow: ellipsis;
+            font-family: s.$fonts-gramatika;
+            font-weight: 900;
+
+
+            @include s.media-breakpoint-up(md) {
+
+              font-size: calc(1rem + 1.5vmax);
+              letter-spacing: 0;
+              hyphens: auto;
+            }
 
           }
 
         }
 
         .thumb {
+          width: 100%;
+          max-height: calc(5vmax + 13rem);
+
+
           //border: 1px solid red;
 
           img {
             display: block;
             height: 100%;
+            width: 100%;
             object-fit: cover;
           }
         }
       }
 
       .b_list {
-        //border: 1px solid red;
         display: grid;
         gap: 2rem;
         grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 
         .b_card {
+          display: flex;
+          height: 100%;
+          flex-flow: column;
+
           border: 1px solid lightgray;
           border-radius: .5rem;
+
+          .b_thumb {
+            position: relative;
+            flex: .7;
+            //border: 1px solid red;
+
+            img {
+              width: 100% !important;
+              height: 100% !important;
+              display: block;
+              object-fit: cover;
+            }
+          }
 
           .b_info {
             padding: 1.5rem;
@@ -104,6 +138,7 @@
             flex-flow: column;
             align-items: flex-start;
             gap: .5rem;
+            flex: .3;
           }
 
           .b_title {

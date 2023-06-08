@@ -1,0 +1,46 @@
+@use 'src/styles/index' as s;
+
+.container {
+  width: 100%;
+  padding: 8vmax 1.5rem 1.5rem;
+
+  min-height: 80vmax;
+
+
+
+  // @include s.margin(top, 10rem);
+  // @include s.padding(bottom, 8rem);
+
+  & :local {
+
+    .wrapper {
+      max-width: 90ch;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      //border: 1px solid red;
+
+      .title{
+        margin: 2rem 0 4rem 0;
+        //text-align: center;
+      }
+
+      hr{
+        margin-top: 3rem;
+      }
+
+      .article_img{
+        width: 100%;
+        max-width: 50rem;
+        //height: 30vmax;
+        //border: 1px solid red;
+      }
+
+      .content{
+        width: 100%;
+      }
+
+    }
+  }
+}

@@ -12,7 +12,7 @@ const Hero = () => {
         <header className={s.header}>
           <Stack spacing={2}>
             <Image src={Grass} alt="grass" />
-            <Typography variant="h3" noWrap>
+            <Typography variant="h3">
               Business Ventures
             </Typography>
 
