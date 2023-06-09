@@ -1,0 +1,91 @@
+@use 'src/styles/index' as s;
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 100rem;
+  display: flex;
+  flex-flow: column;
+  margin: 8rem auto 0;
+  padding: 1.5rem;
+  //border: 1px solid red;
+
+  @include s.media-breakpoint-up(md){
+    flex-flow: row;
+    padding: 0;
+    gap: 4rem;
+  }
+
+  //border: 1px solid red;
+
+
+  & :local {
+
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7rem;
+      flex: 1;
+      //border: 1px solid blue;
+
+      img {
+        max-width: 3rem;
+      }
+
+      .desc {
+        width: 100%;
+        font-weight: 300;
+        letter-spacing: .02vmax;
+        max-width: 50ch;
+        font-size: 1.05rem;
+      }
+
+      h3 {
+        color: inherit;
+      }
+
+      .title {
+        position: relative;
+        margin-left: 2rem;
+
+        h3 {
+          color: s.$clrs-accent;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: -2rem;
+
+          height: 100%;
+          background-color: s.$clrs-accent;
+          width: 1rem;
+          border-radius: 40px;
+        }
+
+      }
+    }
+
+    .right {
+      display: flex;
+      margin: 0 auto;
+      flex: 1;
+      //border: 1px solid red;
+
+      img {
+        margin: 0 auto;
+        max-width: calc(9rem + 5vw);
+        display: none;
+      }
+
+      @include s.media-breakpoint-up(md) {
+        img {
+          max-width: 30rem;
+          display: block;
+        }
+      }
+    }
+  }
+}

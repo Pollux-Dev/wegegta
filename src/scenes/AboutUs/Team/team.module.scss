@@ -1,0 +1,128 @@
+@use 'src/styles/index' as s;
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 100rem;
+  display: flex;
+  flex-flow: wrap;
+  gap: 3rem;
+  margin: 10rem auto 0;
+
+
+  & :local {
+
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7rem;
+      padding: 1rem 2rem;
+
+      @include s.media-breakpoint-up(md) {
+        padding: 0;
+        flex: .5;
+      }
+
+
+      img {
+        max-width: 3rem;
+      }
+
+      .desc {
+        width: 100%;
+        font-weight: 300;
+        letter-spacing: .02vmax;
+        font-size: 1.05rem;
+
+        @include s.media-breakpoint-up(md) {
+          max-width: 50ch;
+        }
+      }
+
+      h3 {
+        color: inherit;
+      }
+
+      .title {
+        position: relative;
+        margin-left: 2rem;
+
+        h3 {
+          color: s.$clrs-accent;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: -2rem;
+
+          height: 100%;
+          background-color: s.$clrs-accent;
+          width: 1rem;
+          border-radius: 40px;
+        }
+
+      }
+    }
+
+    .right {
+      width: 100%;
+      margin: 0 auto;
+
+      @include s.media-breakpoint-up(md) {
+        flex: .5;
+      }
+
+      & > :first-child {
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+        //border: 1px solid red;
+
+        @include s.media-breakpoint-up(md) {
+          padding: 0;
+          width: max-content;
+        }
+      }
+
+
+      .value {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+        width: 100%;
+
+
+        @include s.media-breakpoint-up(md) {
+          padding: 1rem 2rem;
+        }
+
+
+        h5 {
+
+        }
+
+        img {
+          max-width: 100%;
+        }
+
+        p {
+          max-width: 30ch;
+          color: gray;
+          font-weight: 300;
+        }
+      }
+
+
+    }
+  }
+}

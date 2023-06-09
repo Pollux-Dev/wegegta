@@ -1,0 +1,104 @@
+@use 'src/styles/index' as s;
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 100rem;
+  display: flex;
+  flex-flow: column;
+  gap: 5rem;
+  padding: 1.5rem;
+  margin-top: 3rem;
+
+  @include s.media-breakpoint-up(md){
+    flex-flow: row;
+    gap: 1rem;
+    padding: 0;
+    margin: 10rem auto 0;
+
+  }
+
+
+  //border: 1px solid blue;
+
+
+  & :local {
+
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7rem;
+      flex: .5;
+
+
+      img {
+        max-width: 3rem;
+      }
+
+      .desc {
+        width: 100%;
+        font-weight: 300;
+        letter-spacing: .02vmax;
+        max-width: 50ch;
+        font-size: 1.05rem;
+      }
+
+      h3 {
+        color: inherit;
+      }
+
+      .title {
+        position: relative;
+        margin-left: 2rem;
+
+
+        h3 {
+          color: s.$clrs-accent;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: -2rem;
+
+          height: 100%;
+          background-color: s.$clrs-accent;
+          width: 1rem;
+          border-radius: 40px;
+        }
+
+      }
+    }
+
+    .right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
+      gap: 2rem;
+      row-gap: 3rem;
+      margin: 0 auto;
+      flex: .5;
+
+
+
+      .value {
+        display: flex;
+        flex-flow: column;
+        gap: .5rem;
+
+        h5 {
+
+        }
+
+        p {
+          max-width: 30ch;
+
+        }
+      }
+
+
+    }
+  }
+}
