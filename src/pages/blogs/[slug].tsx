@@ -1,7 +1,7 @@
 import Seo from '../../components/seo';
-import { fetchAPI } from '@/lib/api';
+import { fetchAPI } from '@/lib/strapi';
 import ArticlePage from '@/scenes/Article';
-import { ApiArticleArticle, ApiCategoryCategory } from '../../../strapi';
+import { ApiArticleArticle, ApiCategoryCategory } from '@/types/contentTypes';
 
 const Article = ({ article, categories }: any) => {
   const seo = {

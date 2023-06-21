@@ -3,9 +3,9 @@ import s from './article.module.scss';
 import ReactMarkdown from 'react-markdown';
 import NextImage from '@/components/NextImage';
 import Moment from 'react-moment';
-import { ApiArticleArticle, ApiCategoryCategory } from '../../../strapi';
-import { getStrapiMedia } from '@/lib/media';
 import { Avatar, Stack, Typography } from '@mui/material';
+import { getStrapiMedia } from '@/lib/strapi';
+import { ApiArticleArticle, ApiCategoryCategory } from '@/types/contentTypes';
 
 type PropsType = {
   article: ApiArticleArticle;

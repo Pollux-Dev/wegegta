@@ -1,11 +1,11 @@
 import React from 'react';
 import BlogsPage from '@/scenes/Blogs';
-import { fetchAPI } from '@/lib/api';
+import { fetchAPI } from '@/lib/strapi';
 import {
   ApiArticleArticle,
   ApiCategoryCategory,
   ApiHomepageHomepage,
-} from '../../../strapi';
+} from '@/types/contentTypes';
 import { InferGetStaticPropsType } from 'next';
 
 export async function getStaticProps() {

@@ -1,5 +1,6 @@
 import NextImage from 'next/image';
-import { getStrapiMedia } from '@/lib/media';
+
+import { getStrapiMedia } from '@/lib/strapi';
 
 const Image = ({ image, style }: any) => {
   const { url, alternativeText, width, height } = image.data.attributes;

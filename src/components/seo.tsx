@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { getStrapiMedia } from '../lib/media';
+
+import { getStrapiMedia } from '@/lib/strapi';
 
 const Seo = ({ seo }: any) => {
   const seoWithDefaults = {

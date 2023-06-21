@@ -67,7 +67,7 @@ const ContactUs = () => {
               <TextField label="Email" variant="outlined" />
               <TextField label="Phone Number" variant="outlined" />
 
-              <FormControl fullWidth>
+              <FormControl fullWidth className={s.marketing}>
                 <InputLabel id="where">Where did you hear about us?</InputLabel>
                 <Select
                   labelId="where"
@@ -88,7 +88,7 @@ const ContactUs = () => {
             </Stack>
           </form>
 
-          <Stack direction="row" spacing={1} className={s.contact_media}>
+          <Stack direction="row" gap={1} className={s.contact_media}>
             {contactMedia.map((item, idx) => (
               <ListItem alignItems="flex-start" key={idx}>
                 <ListItemAvatar>
