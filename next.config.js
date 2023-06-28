@@ -12,7 +12,7 @@ const nextConfig = {
       'wegegta-backend.onrender.com',
     ],
   },
-  modularizeImports: {
+  /*modularizeImports: {
     '@mui/material': {
       transform: '@mui/material/{{member}}',
     },
@@ -22,11 +22,7 @@ const nextConfig = {
     '@mui/lab': {
       transform: '@mui/lab/{{member}}',
     },
-  },
-  experimental: {},
-  compiler: {
-    removeConsole: false,
-  },
+  },*/
 };
 
 module.exports = nextConfig;

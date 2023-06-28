@@ -1,11 +1,6 @@
 import qs from 'qs';
 import axios from 'axios';
 
-/**
- * Get full Strapi URL from path
- * @param {string} path Path of the URL
- * @returns {string} Full Strapi URL
- */
 export function getStrapiURL(path = '') {
   const url = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
   // const url = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://172.20.10.4:1337';
@@ -13,13 +8,6 @@ export function getStrapiURL(path = '') {
   return `${url}${path}`;
 }
 
-/**
- * Helper to make GET requests to Strapi API endpoints
- * @param {string} path Path of the API route
- * @param {Object} urlParamsObject URL params object, will be stringified
- * @param {Object} options Options passed to fetch
- * @returns Parsed API call response
- */
 export async function fetchAPI<T>(
   path: string,
   urlParamsObject = {},
@@ -29,6 +17,7 @@ export async function fetchAPI<T>(
   const mergedOptions = {
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${process.env.API_TOKEN_READONLY}`,
     },
     ...options,
   };
@@ -61,6 +50,10 @@ export function getStrapiMedia(media: any) {
 
 export const Strapi = axios.create({
   baseURL: `${getStrapiURL('/api')}`,
+  headers: {
+    'Content-Type': 'application/json',
+    // Authorization: `Bearer ${process.env.API_TOKEN_READONLY}`,
+  },
 });
 
 const AUTH_TOKEN = 'auth_token';

@@ -1,35 +1,54 @@
 import React from 'react';
-import { fetchAPI } from '@/lib/strapi';
+import { Strapi } from '@/lib/strapi';
 import { InferGetStaticPropsType } from 'next';
 import { ApiPagePage } from '@/types/contentTypes';
 import FormPage from '@/scenes/Form';
 import { useRouter } from 'next/router';
 
+type ResponseType = {
+  data: ApiPagePage;
+  error: any;
+  meta: any;
+};
+
+type FetchAllResType = {
+  data: object[];
+  meta: Record<string, any>;
+};
+
 export async function getStaticPaths() {
-  const articlesRes: {
-    data: any[];
-    meta: Record<string, any>;
-  } = await fetchAPI('/pages', { fields: ['title', 'slug'] });
+  const pages = await Strapi.get('/pages', {
+    params: { fields: ['title', 'slug'] },
+  })
+    .then((res) => {
+      const pages: FetchAllResType = res.data;
 
-  console.log('articles res ----------- : ', articlesRes);
+      return {
+        paths: pages?.data.map((article: any) => ({
+          params: {
+            slug: article.id.toString(),
+          },
+        })),
+        fallback: true,
+      };
+    })
+    .catch((err) => {
+      // todo -> throw error to know what failed in dev
 
-  if (!articlesRes?.data) {
-    return {
-      paths: [],
-      fallback: false,
-    };
-  }
+      console.log(
+        'Error fetching pages in getStaticProps -------------- > : ',
+        err?.message,
+      );
 
-  // console.log('fall back true ----------- : ', articlesRes);
+      return {
+        paths: [],
+        fallback: false,
+      };
+    });
 
-  return {
-    paths: articlesRes?.data.map((article: any) => ({
-      params: {
-        slug: article.id.toString(),
-      },
-    })),
-    fallback: true,
-  };
+  console.log('pages res ----------- : ', pages);
+
+  return pages;
 }
 
 export async function getStaticProps({ params }) {
@@ -41,46 +60,47 @@ export async function getStaticProps({ params }) {
     };
   }
 
-  const pageData: {
-    data: ApiPagePage[];
-    error: any;
-    meta: any;
-  } = await fetchAPI(`/pages/${params.slug}`, {
-    // filters: {
-    //   title: params.slug,
-    // },
-    populate: {
-      form: {
-        populate: ['checkBoxItems', 'SelectItems', 'label', 'name', 'items'],
+  const pageData = await Strapi.get(`/pages/${params.slug}`, {
+    params: {
+      populate: {
+        form: {
+          populate: ['label', 'name', 'items'],
+        },
       },
     },
-  });
+  })
+    .then<ResponseType>((res) => {
+      return {
+        props: {
+          pageData: res.data,
+        },
+      };
+    })
+    .catch((err) => {
+      console.log(
+        'Error fetching pages in getStaticProps -------------- > : ',
+        err,
+      );
 
-  console.log('pageData ---- :', pageData);
-  if (!pageData?.data || pageData?.error) {
-    return {
-      notFound: true,
-      // props: {},
-    };
-  }
+      return {
+        notFound: true,
+      };
+    });
 
-  return {
-    props: {
-      pageData,
-    }, // revalidate: 1,
-  };
+  // console.log('pageData axsios ---- :', pageData);
+  return pageData;
 }
 
 const Form = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
 
-  console.log('props - ', props, 'isFallback: ', router.isFallback);
+  // console.log('props - ', props.pageData, 'isFallback: ', router.isFallback);
 
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
 
-  // return <h1>alsdkfj;alkdfsj</h1>
+  // return <h1>alsdkfj;alkdfsj</h1>;
 
   return <FormPage form={props.pageData} />;
 };

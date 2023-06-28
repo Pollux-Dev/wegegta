@@ -5,6 +5,7 @@ import { ApiPagePage } from '@/types/contentTypes';
 import { getField } from './getField';
 import { Send } from '@mui/icons-material';
 import { useFormik } from 'formik';
+import axios from 'axios';
 
 type PropsType = {
   form: {
@@ -23,6 +24,29 @@ const Forms = ({ form: { data, meta } }: PropsType) => {
     initialValues,
     onSubmit: (values) => {
       console.log('onSubmit: ', values);
+
+      const token = 'recaptcha token';
+      const formData = {
+        formName: 'farm-1',
+        formData: {
+          ...values,
+        },
+      };
+
+      axios
+        .post('http://localhost:1337/api/ezforms/submit', formData, {
+          withCredentials: false,
+        })
+        .then((res) => {
+          console.log('sumitResponse: ', res);
+        })
+        .catch((error) => {
+          console.log('error submiting: ', error);
+          // error.response.status Check status code
+        })
+        .finally(() => {
+          //Perform action in always
+        });
     },
   });
 
