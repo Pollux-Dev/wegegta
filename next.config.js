@@ -3,16 +3,17 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   eslint: {
-    ignoreDuringBuilds: true,
+    // ignoreDuringBuilds: true,
   },
   images: {
     domains: [
       'localhost',
       'https://wegegta-backend.onrender.com',
       'wegegta-backend.onrender.com',
+      'res.cloudinary.com',
     ],
   },
-  /*modularizeImports: {
+  modularizeImports: {
     '@mui/material': {
       transform: '@mui/material/{{member}}',
     },
@@ -22,7 +23,7 @@ const nextConfig = {
     '@mui/lab': {
       transform: '@mui/lab/{{member}}',
     },
-  },*/
+  },
 };
 
 module.exports = nextConfig;

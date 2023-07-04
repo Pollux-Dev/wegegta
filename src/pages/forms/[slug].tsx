@@ -23,6 +23,8 @@ export async function getStaticPaths() {
     .then((res) => {
       const pages: FetchAllResType = res.data;
 
+      console.log('pages :', pages);
+
       return {
         paths: pages?.data.map((article: any) => ({
           params: {
@@ -35,9 +37,11 @@ export async function getStaticPaths() {
     .catch((err) => {
       // todo -> throw error to know what failed in dev
 
+      // throw err;
+
       console.log(
-        'Error fetching pages in getStaticProps -------------- > : ',
-        err?.message,
+        'Error fetching pages in getStaticPaths -------------- > : ',
+        err,
       );
 
       return {
@@ -51,7 +55,7 @@ export async function getStaticPaths() {
   return pages;
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   console.log('params --> : ', params);
 
   if (!params.slug) {
@@ -69,7 +73,7 @@ export async function getStaticProps({ params }) {
       },
     },
   })
-    .then<ResponseType>((res) => {
+    .then((res) => {
       return {
         props: {
           pageData: res.data,
@@ -77,10 +81,7 @@ export async function getStaticProps({ params }) {
       };
     })
     .catch((err) => {
-      console.log(
-        'Error fetching pages in getStaticProps -------------- > : ',
-        err,
-      );
+      console.log('Error fetching pages in getStaticProps -------------- > : ');
 
       return {
         notFound: true,
@@ -91,10 +92,10 @@ export async function getStaticProps({ params }) {
   return pageData;
 }
 
-const Form = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Form = (props: any) => {
   const router = useRouter();
 
-  // console.log('props - ', props.pageData, 'isFallback: ', router.isFallback);
+  console.log('props - ', props.pageData, 'isFallback: ', router.isFallback);
 
   if (router.isFallback) {
     return <div>Loading...</div>;

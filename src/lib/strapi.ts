@@ -5,6 +5,9 @@ export function getStrapiURL(path = '') {
   const url = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337';
   // const url = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://172.20.10.4:1337';
 
+  // replace the local host with an IP
+  // const url = process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://0
+
   return `${url}${path}`;
 }
 
@@ -52,21 +55,8 @@ export const Strapi = axios.create({
   baseURL: `${getStrapiURL('/api')}`,
   headers: {
     'Content-Type': 'application/json',
-    // Authorization: `Bearer ${process.env.API_TOKEN_READONLY}`,
+    Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN_READONLY}`,
   },
 });
 
-const AUTH_TOKEN = 'auth_token';
-export const getToken = () => {
-  return localStorage.getItem(AUTH_TOKEN);
-};
-
-export const setToken = (token) => {
-  if (token) {
-    localStorage.setItem(AUTH_TOKEN, token);
-  }
-};
-
-export const removeToken = () => {
-  localStorage.removeItem(AUTH_TOKEN);
-};
+// create un interceptor to add the token to the request if this is on the client side other wise assess

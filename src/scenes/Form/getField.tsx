@@ -17,9 +17,23 @@ import React from 'react';
 import s from './forms.module.scss';
 import { FormikContextType } from 'formik/dist/types';
 
+const fileTypes = (fileType: string) => {
+  switch (fileType) {
+    case 'image':
+      return 'image/*';
+    case 'video':
+      return 'video/*';
+    case 'audio':
+      return 'audio/*';
+    case 'pdf/word':
+      return 'text/csv,application/msword,application/pdf, .csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+  }
+};
+
 export const getField = (
   field: Record<string, any>,
   formik: FormikContextType<any>,
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>,
 ) => {
   const isChecked = (name: string, value: any) => {
     if (Array.isArray(formik.values[name])) {
@@ -51,7 +65,7 @@ export const getField = (
           type={field.type}
           placeholder={field.placeholder}
           label={field.label.text}
-          multiline={field.multiline}
+          multiline={field.type === 'text' && field.multiline}
           rows={4}
           fullWidth
           required={field.required}
@@ -67,7 +81,7 @@ export const getField = (
         >
           <FormLabel component="legend">{field.label.text}</FormLabel>
           <FormGroup className={s.items} row>
-            {field.items.map((boxItem, idx) => (
+            {(field.items as any[]).map((boxItem, idx) => (
               <FormControlLabel
                 className={s.checkbox}
                 key={idx}
@@ -101,7 +115,7 @@ export const getField = (
             value={formik.values[field.name.text]}
             onChange={formik.handleChange}
           >
-            {field.items.map((radioItem, idx) => (
+            {(field.items as any[]).map((radioItem, idx) => (
               <FormControlLabel
                 className={s.checkbox}
                 key={idx}
@@ -133,7 +147,7 @@ export const getField = (
 
             // onChange={handleChange}
           >
-            {field.items.map((item, idx) => (
+            {(field.items as any[]).map((item, idx) => (
               <MenuItem key={idx} value={item.text}>
                 {item.text}
               </MenuItem>
@@ -151,9 +165,20 @@ export const getField = (
               type="file"
               variant="outlined"
               name={field.name.text}
-              value={formik.values[field.name.text]}
-              onChange={formik.handleChange}
+              // value={formik.values[field.name.text]}
+              onChange={async (ev: any) => {
+                if (!ev.target.files[0]) return;
+
+                formik.setFieldValue(
+                  field.name.text,
+                  `${ev.target.files[0].name}`,
+                );
+              }}
               required={field.required}
+              InputProps={{}}
+              inputProps={{
+                accept: fileTypes(field.fileType),
+              }}
             />
           </FormControl>
         </div>
