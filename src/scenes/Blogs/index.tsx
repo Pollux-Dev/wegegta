@@ -6,10 +6,10 @@ import Meat from './meat.png';
 import Hen from './hen.png';
 import Egg from './egg.png';
 import Sidebar from '@/scenes/Blogs/Sidebar';
-import { ApiArticleArticle } from '../../../strapi';
 import moment from 'moment';
 import NextImage from '@/components/NextImage';
 import Link from 'next/link';
+import { ApiArticleArticle } from '@/types/contentTypes';
 
 const blogList = [Meat, Hen, Egg];
 
