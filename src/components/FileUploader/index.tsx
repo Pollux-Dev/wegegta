@@ -19,13 +19,12 @@ const FileUploader = () => {
           // }
         }}
         onprocessfilestart={() => {
-          setLoading(true);
+          // setLoading(true);
         }}
         onprocessfiles={() => {
           // setLoading(false);
           // setDisabled(true);
-
-          console.log('session', session);
+          // console.log('session', session);
         }}
         onaddfileprogress={(file, progress) => {
           console.log('onaddfileprogress', progress);
@@ -45,7 +44,7 @@ const FileUploader = () => {
         // stylePanelAspectRatio={'1.6'}
         instantUpload={false}
         labelMaxFileSizeExceeded={'File is too large'}
-        styleImageEditButtonEditItemPosition="center bottom"
+        // styleImageEditButtonEditItemPosition="center bottom"
         // stylePanelLayout="integrated"
         styleLoadIndicatorPosition="center bottom"
         styleProgressIndicatorPosition="right bottom"

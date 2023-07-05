@@ -3,7 +3,7 @@ import { FilePond, registerPlugin } from 'react-filepond';
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
-import FilePondPluginMediaPreview from 'filepond-plugin-media-preview';
+// import FilePondPluginMediaPreview from 'filepond-plugin-media-preview';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 
@@ -17,7 +17,7 @@ import 'filepond/dist/filepond.min.css';
 // Register the plugins
 registerPlugin(
   FilePondPluginImagePreview,
-  FilePondPluginMediaPreview,
+  // FilePondPluginMediaPreview,
   FilePondPluginFileValidateType,
   FilePondPluginFileValidateSize,
 );
