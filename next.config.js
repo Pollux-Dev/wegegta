@@ -11,6 +11,7 @@ const nextConfig = {
       'https://wegegta-backend.onrender.com',
       'wegegta-backend.onrender.com',
       'res.cloudinary.com',
+      '172.20.10.5',
     ],
   },
   modularizeImports: {

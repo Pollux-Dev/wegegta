@@ -1,5 +1,5 @@
 import Seo from '../../components/seo';
-import { fetchAPI } from '@/lib/strapi';
+import { Strapi } from '@/lib/strapi';
 import ArticlePage from '@/scenes/Article';
 import { ApiArticleArticle, ApiCategoryCategory } from '@/types/contentTypes';
 
@@ -20,7 +20,13 @@ const Article = ({ article, categories }: any) => {
 };
 
 export async function getStaticPaths() {
-  const articlesRes: any = await fetchAPI('/articles', { fields: ['slug'] });
+  const articlesRes: any = await Strapi.get('/articles', {
+    params: {
+      fields: ['slug'],
+    },
+  }).then((res) => res.data);
+
+  // console.log('getStaticPaths articlesRes ---- :', articlesRes);
 
   return {
     paths: articlesRes.data.map((article: any) => ({
@@ -33,16 +39,18 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: any) {
-  const articlesRes: ApiArticleArticle = await fetchAPI('/articles', {
-    filters: {
-      slug: params.slug,
+  const articlesRes: ApiArticleArticle = await Strapi.get('/articles', {
+    params: {
+      filters: {
+        slug: params.slug,
+      },
+      populate: '*',
     },
-    populate: '*',
-  });
+  }).then((res) => res.data);
 
-  // console.log('articlesRes ---- :', articlesRes.data[0].attributes.author);
+  // console.log('getStaticProps articlesRes ---- :', articlesRes);
 
-  const categoriesRes = await fetchAPI('/categories');
+  const categoriesRes = await Strapi.get('/categories').then((res) => res.data);
 
   return {
     props: {

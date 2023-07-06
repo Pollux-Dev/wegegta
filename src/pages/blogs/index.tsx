@@ -1,6 +1,6 @@
 import React from 'react';
 import BlogsPage from '@/scenes/Blogs';
-import { fetchAPI } from '@/lib/strapi';
+import { Strapi } from '@/lib/strapi';
 import {
   ApiArticleArticle,
   ApiCategoryCategory,
@@ -10,16 +10,21 @@ import { InferGetStaticPropsType } from 'next';
 
 export async function getStaticProps() {
   // Run API calls in parallel
-
   const [articlesRes, categoriesRes, homepageRes]: any = await Promise.all([
-    fetchAPI('/articles', { populate: '*' }),
-    fetchAPI('/categories', { populate: '*' }),
-    fetchAPI('/homepage', {
-      populate: {
-        hero: '*',
-        seo: { populate: '*' },
+    Strapi.get('/articles', { params: { populate: '*' } }).then(
+      (res) => res.data,
+    ),
+    Strapi.get('/categories', { params: { populate: '*' } }).then(
+      (res) => res.data,
+    ),
+    Strapi.get('/homepage', {
+      params: {
+        populate: {
+          hero: '*',
+          seo: { populate: '*' },
+        },
       },
-    }),
+    }).then((res) => res.data),
   ]);
 
   return {
@@ -32,21 +37,8 @@ export async function getStaticProps() {
   };
 }
 
-// type the props from getStaticProps
-
 const Blogs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log('porps -- --> : ', props);
-
-  const { articles, categories, homepage } = props;
-
-  // format the json string
-  // const data = JSON.stringify(props, null, 2);
-
-  return (
-    <>
-      <BlogsPage articles={props.articles} />
-    </>
-  );
+  return <BlogsPage articles={props.articles} />;
 };
 
 export default Blogs;
