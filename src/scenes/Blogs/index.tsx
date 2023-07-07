@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import s from './blogs.module.scss';
-import { Chip, Stack, Typography } from '@mui/material';
+import { Chip, Pagination, Stack, Typography } from '@mui/material';
 
 import Meat from './meat.png';
 import Hen from './hen.png';
@@ -18,6 +18,10 @@ type PropType = {
 };
 
 const Blogs = ({ articles }: PropType) => {
+  const [page, setPage] = useState(1);
+  const [blogCount, setBlogCount] = useState(1);
+  const [blogs, setBlogs] = useState<ApiArticleArticle[]>([]);
+
   const [featuredArticle, setFeaturedArticle] = useState<ApiArticleArticle>(
     articles[0],
   );
@@ -30,6 +34,20 @@ const Blogs = ({ articles }: PropType) => {
         articles[0],
     );
   }, []);
+
+  useEffect(() => {
+    // there is only 6 blogs per page
+    // calculate the pagination count and the page number
+    const count = Math.ceil(articles.length / 6);
+    setBlogCount(count);
+  }, []);
+
+  useEffect(() => {
+    // get the blogs for the current page
+    const start = (page - 1) * 6;
+    const end = start + 6;
+    setBlogs(articles.slice(start, end));
+  }, [page]);
 
   return (
     <div className={s.container}>
@@ -77,7 +95,7 @@ const Blogs = ({ articles }: PropType) => {
               <Typography variant="h4">Recent Post</Typography>
 
               <div className={s.b_list}>
-                {articles.slice(1, 4).map((article, idx) => (
+                {blogs.map((article, idx) => (
                   <Link href={`blogs/${article.attributes.slug}`} key={idx}>
                     <div className={s.b_card}>
                       <div className={s.b_thumb}>
@@ -103,6 +121,16 @@ const Blogs = ({ articles }: PropType) => {
                   </Link>
                 ))}
               </div>
+
+              <Pagination
+                className={s.pagination}
+                count={blogCount}
+                onChange={(event, page) => {
+                  setPage(page);
+                }}
+                variant="outlined"
+                shape="rounded"
+              />
             </Stack>
           </div>
 

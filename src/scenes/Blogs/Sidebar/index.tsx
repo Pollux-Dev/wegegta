@@ -35,7 +35,7 @@ const social = [
 
 const Sidebar = () => {
   return (
-    <aside className={s.container}>
+    <aside className={s.container} id="sticky">
       <Stack spacing={2}>
         <Typography variant="h5">Follow us</Typography>
         <div className={s.social}>

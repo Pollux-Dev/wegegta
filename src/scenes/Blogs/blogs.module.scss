@@ -15,7 +15,6 @@
       display: flex;
       flex-flow: column;
 
-      //border: 1px solid red;
 
       header {
         margin: 0 auto;
@@ -31,7 +30,6 @@
 
       .left {
         width: 100%;
-        //border: 1px solid red;
 
         @include s.media-breakpoint-up(md) {
           flex: .75;
@@ -115,6 +113,7 @@
           display: flex;
           height: 100%;
           flex-flow: column;
+          max-width: 27rem;
 
           border: 1px solid lightgray;
           border-radius: .5rem;
@@ -147,6 +146,10 @@
             letter-spacing: 0;
           }
         }
+      }
+
+      .pagination{
+        margin-top: 5rem;
       }
 
     }
