@@ -49,6 +49,18 @@
 
           //border: 1px solid #000;
 
+          .agreement{
+            margin-top: 3rem;
+            span{
+              font-size: 1.1rem;
+              font-weight: 300;
+            }
+          }
+
+          .agreement + button{
+            margin-top: 1rem;
+          }
+
           button {
             margin-top: 4rem;
             font-size: 1.2rem;
@@ -62,6 +74,8 @@
     }
   }
 }
+
+
 
 .checkbox_form_group{
   //border: 1px solid blue;

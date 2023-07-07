@@ -59,12 +59,12 @@ export const getField = (
     case 'form.textfield':
       return (
         <TextField
-          name={field.name.text}
-          value={formik.values[field.name.text]}
+          name={field.name}
+          value={formik.values[field.name]}
           onChange={formik.handleChange}
           type={field.type}
           placeholder={field.placeholder}
-          label={field.label.text}
+          label={field.label}
           multiline={field.type === 'text' && field.multiline}
           rows={4}
           fullWidth
@@ -79,7 +79,7 @@ export const getField = (
           component="fieldset"
           required={field.required}
         >
-          <FormLabel component="legend">{field.label.text}</FormLabel>
+          <FormLabel component="legend">{field.label}</FormLabel>
           <FormGroup className={s.items} row>
             {(field.items as any[]).map((boxItem, idx) => (
               <FormControlLabel
@@ -88,31 +88,48 @@ export const getField = (
                 control={
                   <Checkbox
                     value={boxItem.text}
-                    checked={isChecked(field.name.text, boxItem.text)}
+                    checked={isChecked(field.name, boxItem.text)}
                     onChange={() =>
-                      handleCheckboxChange(field.name.text, boxItem.text)
+                      handleCheckboxChange(field.name, boxItem.text)
                     }
                   />
                 }
                 label={boxItem.text}
                 required={
-                  !!(field.required && !formik.values[field.name.text]?.length)
+                  !!(field.required && !formik.values[field.name]?.length)
                 }
-                name={field.name.text}
+                name={field.name}
               />
             ))}
           </FormGroup>
         </FormControl>
       );
+    case 'form.agreement':
+      return (
+        <FormControlLabel
+          className={s.agreement}
+          required={field.required}
+          name={field.name}
+          label={field.label}
+          control={
+            <Checkbox
+              // checked={isChecked(field.name, field.text)}
+              onChange={(event, checked) => {
+                formik.setFieldValue(field.name, checked);
+              }}
+            />
+          }
+        />
+      );
     case 'form.radiobox':
       return (
         <FormControl className={s.radio_form_group} required={field.required}>
-          <FormLabel>{field.label.text}</FormLabel>
+          <FormLabel>{field.label}</FormLabel>
           <RadioGroup
             className={s.items}
             row
-            name={field.name.text}
-            value={formik.values[field.name.text]}
+            name={field.name}
+            value={formik.values[field.name]}
             onChange={formik.handleChange}
           >
             {(field.items as any[]).map((radioItem, idx) => (
@@ -123,7 +140,7 @@ export const getField = (
                 label={radioItem.text}
                 value={radioItem.text}
                 required={field.required}
-                name={field.name.text}
+                name={field.name}
               />
             ))}
           </RadioGroup>
@@ -132,17 +149,15 @@ export const getField = (
     case 'form.select':
       return (
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">
-            {field.label.text}
-          </InputLabel>
+          <InputLabel id="demo-simple-select-label">{field.label}</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            name={field.name.text}
+            name={field.name}
             placeholder={field.placeholder}
-            value={formik.values[field.name.text]}
+            value={formik.values[field.name]}
             onChange={formik.handleChange}
-            label={field.label.text}
+            label={field.label}
             required={field.required}
 
             // onChange={handleChange}
@@ -160,19 +175,16 @@ export const getField = (
       return (
         <div>
           <FormControl>
-            <FormLabel>{field.label.text}</FormLabel>
+            <FormLabel>{field.label}</FormLabel>
             <TextField
               type="file"
               variant="outlined"
-              name={field.name.text}
+              name={field.name}
               // value={formik.values[field.name.text]}
               onChange={async (ev: any) => {
                 if (!ev.target.files[0]) return;
 
-                formik.setFieldValue(
-                  field.name.text,
-                  `${ev.target.files[0].name}`,
-                );
+                formik.setFieldValue(field.name, `${ev.target.files[0].name}`);
               }}
               required={field.required}
               InputProps={{}}
@@ -194,3 +206,6 @@ export const getField = (
       );
   }
 };
+
+// regex for no space, no number, no special character
+export const regex = /^[a-zA-Z]+$/;

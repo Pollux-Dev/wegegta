@@ -20,11 +20,13 @@ type PropsType = {
 };
 
 const Forms = ({ form: { data, meta } }: PropsType) => {
-  // console.log('data -----   : ', data);
   const [initialValues, setInitialValues] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const formRef = useRef<HTMLFormElement>(null);
+  const [fields, setFields] = useState<any[]>([]);
+
+  // console.log('data -----   : ', data);
 
   const formik = useFormik({
     enableReinitialize: true,
@@ -32,7 +34,7 @@ const Forms = ({ form: { data, meta } }: PropsType) => {
     onSubmit: (values) => {
       if (!formRef.current) return;
 
-      const form = {
+      const submissionData = {
         formTitle: data.attributes.title,
         formId: `${data.id}`,
         formData: {
@@ -54,9 +56,6 @@ const Forms = ({ form: { data, meta } }: PropsType) => {
 
       const formElement = formRef.current;
       const formData = new FormData();
-      formData.append('data', JSON.stringify(form));
-
-      console.log('form Data: ', JSON.stringify(formData));
 
       Array.from(formElement.elements).forEach((element: any) => {
         const { name, type, value, files } = element;
@@ -67,53 +66,69 @@ const Forms = ({ form: { data, meta } }: PropsType) => {
           Array.from(files).forEach((file: any) => {
             formData.append(`files.${name}`, file, file.name);
           });
-
-          // formData.append('fileInfo', JSON.stringify(newFileData));
         }
       });
 
-      console.log('form Data: ', JSON.stringify(formData));
-      // return;;
+      formData.append('data', JSON.stringify(submissionData));
+      // console.log('form Data: ', formData);
 
-      // first upload the files content to strapi if there is any
       setIsLoading(true);
-
       Strapi.post(
         `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/form-submissions/submissions`,
         formData,
         {
           withCredentials: false,
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
         },
       )
         .then((res) => {
           console.log('sumitResponse: ', res);
           setIsLoading(false);
-          formik.resetForm();
-          router.replace('/thank-you');
+          // formik.resetForm();
+          // router.replace('/thank-you');
         })
         .catch((error) => {
           console.log('error submiting: ', error?.response?.data);
           setIsLoading(false);
-          toast.error(error?.response?.data?.message);
+          toast.error(error?.response?.data?.message || 'Something Wrong!');
         })
         .finally(() => {
           //Perform action in always
         });
     },
   });
-  // console.log('formik vlaues: ', formik.values);
-  useEffect(() => {
-    const forms = data.attributes.form.reduce((acc: any, form: any) => {
-      const formName = form.name.text;
-      return {
-        ...acc,
-        [formName]: '',
-      };
-    }, {});
 
-    setInitialValues(forms);
+  useEffect(() => {
+    const formInitialValue = data.attributes.form.reduce(
+      (acc: any, form: any) => {
+        const formName = form.name;
+        return {
+          ...acc,
+          [formName]: '',
+        };
+      },
+      {},
+    );
+
+    setInitialValues(formInitialValue);
 
     // console.log('forms ----- : ', forms);
+  }, [data]);
+
+  useEffect(() => {
+    // __component:"form.agreement"
+
+    const formFields = (data.attributes.form as any[]).sort((a, b) => {
+      if (a.__component === 'form.agreement') return 1;
+      if (b.__component === 'form.agreement') return -1;
+      return 0;
+    });
+
+    setFields(formFields);
+
+    console.log('formFields: ', formFields);
   }, [data]);
 
   return (
@@ -130,7 +145,7 @@ const Forms = ({ form: { data, meta } }: PropsType) => {
 
         <Card elevation={3} className={s.content}>
           <form onSubmit={formik.handleSubmit} ref={formRef}>
-            {data.attributes.form.map((form: any, idx: any) => (
+            {fields.map((form: any, idx: any) => (
               <React.Fragment key={idx}>
                 {getField(form, formik, setIsLoading)}
               </React.Fragment>

@@ -12,6 +12,7 @@ const nextConfig = {
       'wegegta-backend.onrender.com',
       'res.cloudinary.com',
       '172.20.10.5',
+      '172.20.10.4',
     ],
   },
   modularizeImports: {
