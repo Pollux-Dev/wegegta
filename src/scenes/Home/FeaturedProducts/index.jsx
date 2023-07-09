@@ -2,7 +2,7 @@ import React from 'react';
 import s from './featuredproducts.module.scss';
 import Image from 'next/image';
 import SupIcon from './sub-icon.png';
-import { Typography } from '@mui/material';
+import { Card, Typography } from '@mui/material';
 import Cow from './meat.png';
 import Car from './chiken.png';
 import Chicken from './bean.png';
@@ -31,9 +31,7 @@ const FeaturedProducts = () => {
       <div className={s.wrapper}>
         <header>
           <Image src={SupIcon} alt="grass" />
-          <Typography variant="h3">
-            Featured Products
-          </Typography>
+          <Typography variant="h3">Featured Products</Typography>
           <Typography variant="body1">
             We have produced and manufactured a lot of products under different
             venture and sectors. Here are the a few products below.
@@ -42,7 +40,7 @@ const FeaturedProducts = () => {
 
         <div className={s.cards}>
           {cardData.map((card, index) => (
-            <div className={s.card} key={index}>
+            <Card className={s.card} key={index}>
               <div className={s.card_img}>
                 <Image src={card.img} alt={card.title} />
               </div>
@@ -50,7 +48,7 @@ const FeaturedProducts = () => {
                 {card.title}
               </Typography>
               <Typography variant="body1">{card.desc}</Typography>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

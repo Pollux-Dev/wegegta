@@ -123,6 +123,7 @@ const Blogs = ({ articles }: PropType) => {
               </div>
 
               <Pagination
+                size="large"
                 className={s.pagination}
                 count={blogCount}
                 onChange={(event, page) => {

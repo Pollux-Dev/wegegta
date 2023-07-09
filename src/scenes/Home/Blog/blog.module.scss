@@ -11,21 +11,18 @@
     .wrapper {
       margin: 0 auto;
       max-width: 90rem;
-      //overflow-x: visible;
-      //margin-left: calc((100vw - 80rem) / 2);
-
 
       .header {
         display: flex;
         align-items: center;
         gap: 7rem;
+        //border: 1px solid #000;
 
         img {
           max-width: 3rem;
         }
 
         .desc {
-          //max-width: 50ch;
           width: 100%;
           font-weight: 300;
           letter-spacing: .02vmax;
@@ -40,31 +37,68 @@
 
       .slider {
         margin-top: 4rem;
-        padding: .3rem;
         max-width: 100%;
-        //overflow: hidden;
+        position: relative;
 
-        //width: max-content;
-        //border: 1px solid red;
+        &::after, &::before{
+          //content: '';
+          position: absolute;
+          display: block;;
+          top: 0;
+          height: 100%;
+          background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0) 100%);
+          width: 5rem;
+          z-index: 11;
+        }
+
+        &::after{
+          right: 0;
+          background: linear-gradient(-90deg, white 20%, rgba(255, 255, 255, 0) 30%);
+
+        }
+
+
+        .nav_btns{
+          position: absolute;
+          right: 1%;
+          margin-left: auto;
+          max-width: max-content;
+          top: -7rem;
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+
+          button{
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: #d5d5d5;
+            min-width: initial;
+          }
+        }
+
 
         .swiper {
-          //width: 100%;
+          position: relative;
           max-width: max-content;
-          //border: 1px solid blue;
-          //overflow-x: visible;
-
+          padding: 1.4rem 0;
 
           .slide {
             max-width: 50ch;
             width: 100%;
+            //overflow: hidden;
+
             //border: 1px solid red;
           }
 
           .blog_card {
-            background-color: lightgray;
+            //background-color: lightgray;
             max-width: 50ch;
             width: 100%;
             margin: 0 auto;
+            border-radius: 1rem;
+
+
 
             //border: 1px solid red;
 

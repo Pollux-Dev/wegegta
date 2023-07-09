@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './ventures.module.scss';
-import { Button, Typography } from '@mui/material';
+import { Button, Card, Typography } from '@mui/material';
 import SupIcon from './venture-sup-icon.png';
 import Image from 'next/image';
 
@@ -33,9 +33,7 @@ const Ventures = () => {
       <div className={s.wrapper}>
         <header>
           <Image src={SupIcon} alt="grass" />
-          <Typography variant="h3" >
-            Our Business Ventures
-          </Typography>
+          <Typography variant="h3">Our Business Ventures</Typography>
           <Typography variant="body1">
             A business venture is a new business or business activity,
             especially one that involves risk. Business ventures can be started
@@ -46,7 +44,7 @@ const Ventures = () => {
 
         <div className={s.cards}>
           {cardData.map((card, index) => (
-            <div className={s.card} key={index}>
+            <Card elevation={2} className={s.card} key={index}>
               <div className={s.card_img}>
                 <Image src={card.img} alt={card.title} />
               </div>
@@ -63,7 +61,7 @@ const Ventures = () => {
               >
                 Read More
               </Button>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

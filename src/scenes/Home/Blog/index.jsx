@@ -1,6 +1,9 @@
 import React from 'react';
 import s from './blog.module.scss';
-import { Button, Stack, Typography } from '@mui/material';
+import { Button, Card, Stack, Typography, useMediaQuery } from '@mui/material';
+
+import { useTheme } from '@mui/material/styles';
+
 import Image from 'next/image';
 import Grass from '/public/assets/grass.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,8 +12,14 @@ import Thumb from './thumb-1.png';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import clsx from 'clsx';
+import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 
 const Blog = () => {
+  const theme = useTheme();
+  const match = useMediaQuery(theme.breakpoints.up('lg'));
+  // const match = useMediaQuery(theme.breakpoints.up('lg'))
+  //
   return (
     <div className={s.container}>
       <div className={s.wrapper}>
@@ -32,9 +41,19 @@ const Blog = () => {
         </header>
 
         <div className={s.slider}>
+          <div className={s.nav_btns}>
+            <Button variant="contained" className="blog-prev">
+              <ChevronLeft />
+            </Button>
+
+            <Button variant="contained" className="blog-next">
+              <ChevronRight />
+            </Button>
+          </div>
+
           <Swiper
             loop
-            slidesPerView={'auto'}
+            slidesPerView={match ? 3 : 'auto'}
             spaceBetween={30}
             // centeredSlides={true}
             pagination={{
@@ -42,15 +61,15 @@ const Blog = () => {
             }}
             navigation={{
               enabled: true,
-              // nextEl: '.swiper-button-next',
-              // prevEl: '.swiper-button-prev',
+              nextEl: '.blog-next',
+              prevEl: '.blog-prev',
             }}
             modules={[Navigation]}
             className={s.swiper}
           >
-            {Array.from([1, 2, 3, 4, 5]).map((_, i) => (
+            {Array.from([1, 2, 3, 4, 5, 6]).map((_, i) => (
               <SwiperSlide className={s.slide} key={i}>
-                <div className={s.blog_card}>
+                <Card elevation={1} className={s.blog_card}>
                   <div className={s.thumb}>
                     <Image src={Thumb} alt="thumbnail" />
                   </div>
@@ -73,7 +92,7 @@ const Blog = () => {
                       Read More
                     </Button>
                   </div>
-                </div>
+                </Card>
               </SwiperSlide>
             ))}
           </Swiper>

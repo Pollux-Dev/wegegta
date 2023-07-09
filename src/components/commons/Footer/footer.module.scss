@@ -11,6 +11,29 @@
 
   & :local {
 
+    .copyright{
+      background-color: #8A5C28;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+
+      p{
+        font-weight: 300;
+      }
+
+      .socials{
+        display: grid;
+        grid-auto-flow: column;
+        gap: .5rem;
+      }
+      @include s.media-breakpoint-up(md){
+        padding: 1rem 5rem;
+      }
+
+
+    }
     .wrapper {
       display: flex;
       flex-flow: column;
@@ -65,8 +88,17 @@
 
         .hor {
           display: flex;
-          gap: 5rem;
-          justify-content: center;
+          justify-content: space-evenly;
+          //border: 1px solid #000;
+
+
+          .col{
+            gap: .7rem;
+
+            h4{
+
+            }
+          }
         }
       }
     }
