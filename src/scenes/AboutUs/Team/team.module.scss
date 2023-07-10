@@ -100,19 +100,24 @@
         gap: .5rem;
         box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
         width: 100%;
+        padding-top: 1rem;
 
 
         @include s.media-breakpoint-up(md) {
           padding: 1rem 2rem;
         }
 
+        .pp {
+          position: relative;
+          max-width: 20rem;
+          width: 10vmax;
+          height: 10vmax;
 
-        h5 {
+          img {
+            max-width: 100%;
+            object-fit: cover;
+          }
 
-        }
-
-        img {
-          max-width: 100%;
         }
 
         p {

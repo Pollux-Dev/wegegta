@@ -5,14 +5,18 @@ import OurMission from './OurMIssion';
 import Values from './Values';
 import Team from './Team';
 
-const AboutUs = () => {
+type Props = {
+  team: any[];
+};
+
+const AboutUs = ({ team }: Props) => {
   return (
     <div className={s.container}>
       <div className={s.wrapper}>
         <Hero />
         <OurMission />
         <Values />
-        <Team />
+        <Team team={team} />
       </div>
     </div>
   );

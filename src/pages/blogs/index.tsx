@@ -33,7 +33,7 @@ export async function getStaticProps() {
       categories: categoriesRes.data as ApiCategoryCategory[],
       homepage: homepageRes.data as ApiHomepageHomepage,
     },
-    revalidate: 1,
+    // revalidate: 1,
   };
 }
 

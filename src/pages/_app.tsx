@@ -10,6 +10,7 @@ import theme from '@/theme';
 import '@global/index.scss';
 import { useRouter } from 'next/router';
 import { Toaster } from 'react-hot-toast';
+import { appWithTranslation } from 'next-i18next';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -32,7 +33,7 @@ const useLayout = () => {
   return LayoutComponent;
 };
 
-export default function MyApp({
+function MyApp({
   Component,
   pageProps,
   emotionCache = clientSideEmotionCache,
@@ -57,3 +58,5 @@ export default function MyApp({
     </ContextWrapper>
   );
 }
+
+export default appWithTranslation(MyApp);

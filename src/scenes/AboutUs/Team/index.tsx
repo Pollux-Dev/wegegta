@@ -6,6 +6,7 @@ import V1 from './team-pic/Desktop-Vector 11-1.png';
 import V2 from './team-pic/Desktop-Vector 11-1.png';
 import V3 from './team-pic/Desktop-Vector 11-2.png';
 import V4 from './team-pic/Desktop-Vector 11-3.png';
+import { getStrapiMedia } from '@/lib/strapi';
 
 const values = [
   {
@@ -30,14 +31,21 @@ const values = [
   },
 ];
 
-const OurMission = () => {
+type Props = {
+  team: any[];
+};
+const OurMission = ({ team }: Props) => {
+  console.log('props :', team);
+
   return (
     <div className={s.container}>
       <div className={s.left}>
         <Stack spacing={2}>
           <Stack className={s.title}>
             <Typography variant="subtitle1">Team</Typography>
-            <Typography variant="h3">Professional working <br/> Team</Typography>
+            <Typography variant="h3">
+              Professional working <br /> Team
+            </Typography>
           </Stack>
 
           <Typography variant="body1" className={s.desc}>
@@ -54,11 +62,17 @@ const OurMission = () => {
 
       <div className={s.right}>
         <div>
-          {values.map((value, index) => (
+          {team.map((value, index) => (
             <div className={s.value} key={index}>
-              <Image src={value.img} alt="grass" />
-              <Typography variant="h5">{value.title}</Typography>
-              <Typography>{value.desc}</Typography>
+              <div className={s.pp}>
+                <Image
+                  src={getStrapiMedia(value.attributes.picture)}
+                  alt="grass"
+                  fill
+                />
+              </div>
+              <Typography variant="h5">{value.attributes.name}</Typography>
+              <Typography>( {value.attributes.role} )</Typography>
             </div>
           ))}
         </div>

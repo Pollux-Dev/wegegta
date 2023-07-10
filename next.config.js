@@ -30,18 +30,29 @@ const nextConfig = {
   i18n: {
     // These are all the locales you want to support in
     // your application
-    locales: ['am'],
+    locales: ['am', 'en'],
     // This is the default locale you want to be used when visiting
     // a non-locale prefixed path e.g. `/hello`
-    defaultLocale: 'am',
+    defaultLocale: 'en',
     // This is a list of locale domains and the default locale they
     // should handle (these are only required when setting up domain routing)
     // Note: subdomains must be included in the domain value to be matched e.g. "fr.example.com".
-
   },
 
-
-
+  //add Accept-Language: am;q=0.8 to request header
+  headers: async () => {
+    return [
+      {
+        source: '/:path*{/}?',
+        headers: [
+          {
+            key: 'Accept-Language',
+            value: 'am;q=0.7',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
