@@ -23,7 +23,7 @@ export async function getStaticPaths() {
     .then((res) => {
       const pages: FetchAllResType = res.data;
 
-      console.log('pages :', pages);
+      console.log('pages ----- :', pages);
 
       return {
         paths: pages?.data.map((article: any) => ({

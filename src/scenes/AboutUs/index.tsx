@@ -9,14 +9,14 @@ type Props = {
   team: any[];
 };
 
-const AboutUs = ({ team }: Props) => {
+const AboutUs = () => {
   return (
     <div className={s.container}>
       <div className={s.wrapper}>
         <Hero />
         <OurMission />
         <Values />
-        <Team team={team} />
+        {/*<Team team={team} />*/}
       </div>
     </div>
   );

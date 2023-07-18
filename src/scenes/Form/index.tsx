@@ -87,8 +87,8 @@ const Forms = ({ form: { data, meta } }: PropsType) => {
           console.log('sumitResponse: ', res);
           setIsLoading(false);
           toast.success('Form Submitted Successfully!');
-          // formik.resetForm();
-          // router.replace('/thank-you');
+          formik.resetForm();
+          router.replace('/thank-you');
         })
         .catch((error) => {
           console.log('error submiting: ', error?.response?.data);

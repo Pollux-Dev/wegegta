@@ -2,7 +2,7 @@ import React from 'react';
 import AboutUsPage from '@/scenes/AboutUs';
 import { Strapi } from '@/lib/strapi';
 import { InferGetStaticPropsType } from 'next';
-
+/*
 export async function getStaticProps() {
   // Run API calls in parallel
   const team = await Strapi.get('/teams', { params: { populate: '*' } })
@@ -22,10 +22,14 @@ export async function getStaticProps() {
       team,
     }, // revalidate: 1,
   };
-}
+}*/
 
-const AboutUs = ({ team }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <AboutUsPage team={team?.data} />;
+// const AboutUs = ({ team }: InferGetStaticPropsType<typeof getStaticProps>) => {
+//   return <AboutUsPage team={team?.data} />;
+// };
+
+const AboutUs = () => {
+  return <AboutUsPage />;
 };
 
 export default AboutUs;
