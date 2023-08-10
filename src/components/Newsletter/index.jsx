@@ -17,8 +17,7 @@ const Newsletter = () => {
           <Typography variant="body2">Newsletter</Typography>
           <Typography variant="h4">Get Weekly Updates</Typography>
           <Typography variant="body1" className={s.desc}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
-            delectus doloribus explicabo possimus tempora! Asperiores
+            We firmly believe that Ethiopia is a land abundant with developable resources, bestowed upon its citizens by the creator without discrimination. Our strength lies in unity, a divine gift that empowers our effectiveness.
           </Typography>
         </Stack>
 

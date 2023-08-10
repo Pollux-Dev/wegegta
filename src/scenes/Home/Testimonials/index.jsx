@@ -52,16 +52,17 @@ const Testimonials = () => {
               <SwiperSlide className={s.slide} key={i}>
                 <Card elevation={3} className={s.blog_card}>
                   <Typography variant="body1" className={s.desc}>
-                    I would highly recommend Wegegta to any farmer who is
+                    {/* I would highly recommend Wegegta to any farmer who is
                     looking to improve their operation. They can provide you
                     with the resources and expertise you need to succeed in
-                    today&apos;s competitive agricultural market.
+                    today&apos;s competitive agricultural market. */}
+                    I must say, my experience with Wegegta agro services has been truly exceptional. The care and attention they put into sourcing local ingredients and incorporating modern practices reflect their commitment to quality. As a consumer, I feel confident knowing that their products support local farmers and promote the rich agricultural heritage of Ethiopia. Wegegta has undoubtedly won my trust as a reliable and forward-thinking agro business.
                   </Typography>
                   <div className={s.avatar}>
                     <Avatar />
                     <div className={s.info}>
-                      <Typography variant="subtitle1">John Doe</Typography>
-                      <Typography variant="body2">Farmer</Typography>
+                      <Typography variant="subtitle1">Alemu Tegegne</Typography>
+                      <Typography variant="body2">Farm Owner</Typography>
                     </div>
                   </div>
                 </Card>

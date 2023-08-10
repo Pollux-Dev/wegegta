@@ -20,25 +20,17 @@ const Missions = () => {
           <div className={s.mission}>
             <Stack component='header'>
               <Image src={SubIcon} alt="grass" />
-              <Typography variant="h4">Wegegta’s Values & Vision</Typography>
+              <Typography variant="h4">Wegegta’s Vision & Values</Typography>
             </Stack>
 
             <Typography variant="body1" className={s.desc}>
-              Our mission is to provide our customers with the freshest,
-              highest-quality agricultural products possible. We are committed
-              to sustainable agriculture practices, and we use only the most
-              natural methods to grow our crops and raise our animals. We are
-              also proud to be a part of our community, and we are committed to
-              giving back.
+            Our vision is to make a country where agriculture-related trade flourishes, and where the people live happily for the next generation. We firmly believe that Ethiopia is a land abundant with developable resources, bestowed upon its citizens by the creator without discrimination. Our strength lies in unity, a divine gift that empowers our effectiveness.
             </Typography>
 
             <Stack>
-              <Typography variant="h5">Our Values</Typography>
+              <Typography variant="h5">Our Mission</Typography>
               <Typography variant="body1" className={s.desc}>
-                We believe that Ethiopia is a country that has resources that
-                can be developed and has been given to its citizens without
-                discrimination by the creator plus We believe that union is a
-                divine gift and our power of effectiveness.
+              Our mission encompasses ethical customer service, market-research-based product supply for quality and affordability, earning foreign currency through agricultural exports, boosting indigenous productivity via research, all while ensuring effective profitability.
               </Typography>
             </Stack>
           </div>

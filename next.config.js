@@ -13,7 +13,9 @@ const nextConfig = {
       'res.cloudinary.com',
       '172.20.10.5',
       '172.20.10.4',
-      'codenight.dev'
+      'codenight.dev',
+      '172.20.10.3',
+      '0.0.0.0'
     ],
   },
   modularizeImports: {

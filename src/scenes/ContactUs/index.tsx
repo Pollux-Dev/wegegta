@@ -18,24 +18,29 @@ import {
 
 import Map from '@/public/assets/map.png';
 import Image from 'next/image';
-import { Email, Fax, Phone } from '@mui/icons-material';
+import { Email, Fax, Phone, Telegram } from '@mui/icons-material';
 
 const contactMedia = [
   {
-    name: 'Phone',
-    subTitle: '+25190000000',
+    name: 'Office Phone',
+    subTitle: 'Office +251 116733233',
+    icon: <Phone />,
+  },
+  {
+    name: 'Mobile Phone',
+    subTitle: 'Mobile: +251 992392978',
     icon: <Phone />,
   },
   {
     name: 'Email',
-    subTitle: 'info@wegegta.com',
+    subTitle: 'wogegta@gmail.com',
     icon: <Email />,
   },
   {
-    name: 'Fax',
-    subTitle: '+123456',
-    icon: <Fax />,
-  },
+    name: 'Telegram',
+    subTitle: 'Wogegta SC',
+    icon: <Telegram />,
+  }
 ];
 
 const ContactUs = () => {
@@ -58,8 +63,12 @@ const ContactUs = () => {
             </Typography>
 
             <Typography>
-              Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu
-              leo molestie vel, ornare non id blandit netus
+              
+            Get in touch with us to learn more about our services and how we can help you. We look forward to hearing from you. 
+            <br/>                    
+            አዲስ አበባ፣ የካ ክ/ከተማ፣ ወረዳ 13 ጉጂ ሃይላንድ ኮፊ ፕላንቴሽን PLC ህንጻ 4ኛ ፎቅ ቢሮ ቁጥር 401
+            <br/>
+            Addis Abeba, Yeka S/city, Woreda 13; Guji Highland Coffee Plantation PLC Building 4th floor Office No. 401. Wogegta Agribusiness SC.
             </Typography>
 
             <Stack spacing={2}>

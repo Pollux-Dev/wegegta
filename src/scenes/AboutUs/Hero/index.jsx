@@ -15,18 +15,10 @@ const Hero = () => {
             <Typography variant="h3">Business Ventures</Typography>
 
             <Typography variant="body1" className={s.desc}>
-              At Wegegta, we are passionate about agriculture and the role it
-              plays in our food system. We believe that everyone deserves access
-              to fresh, healthy food, and we are committed to providing our
-              customers with the highest-quality products possible.
+            Wegegta Agro Business Share Holding Company is a registered entity under Ethiopian Commercial Law number 1243/2005 and holds Commercial Registration and Business License Proc No.980/2008, with the commercial registration number LK/AA/2/5008138/2015 issued on February 13, 2023.
               <br/>
               <br/>
-              We are a family-owned and operated business that has been in
-              operation for the past years. We are committed to sustainable
-              agriculture practices, and we use only the most natural methods to
-              grow our crops. We also raise our own animals, and we believe that
-              humanely-raised meat and poultry is the best way to ensure that
-              our customers are getting the healthiest possible food.
+              At Wegegta, we were initiated by the idea of addressing a critical issue: despite 85% of Ethiopia's population being engaged in agriculture, the products often face challenges such as underpricing, compromised quality, inadequate quantity, and untimely fulfillment of demand. Our mission is to bridge this gap and revolutionize the agricultural sector by delivering premium services and products, fostering growth, and ensuring the prosperity of both farmers and consumers alike.
             </Typography>
           </Stack>
         </header>

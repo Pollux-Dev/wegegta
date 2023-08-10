@@ -15,11 +15,7 @@ const OurMission = () => {
           </Stack>
 
           <Typography variant="body1" className={s.desc}>
-            Our mission is to provide our customers with the freshest,
-            highest-quality agricultural products possible. We are committed to
-            sustainable agriculture practices, and we use only the most natural
-            methods to grow our crops and raise our animals. We are also proud
-            to be a part of our community, and we are committed to giving back.
+            Our mission encompasses ethical customer service, market-research-based product supply for quality and affordability, earning foreign currency through agricultural exports, boosting indigenous productivity via research, all while ensuring effective profitability.
           </Typography>
         </Stack>
       </div>

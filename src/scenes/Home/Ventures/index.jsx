@@ -13,7 +13,7 @@ const cardData = [
   {
     img: Cow,
     title: 'The Best Animal Ingredient ',
-    desc: 'we have the best animal nutrition ingredient to all our customers around the country.',
+    desc: 'We have the best animal nutrition ingredient to all our customers around the country.',
   },
   {
     img: Car,
@@ -23,7 +23,7 @@ const cardData = [
   {
     img: Chicken,
     title: 'The Best Chicken & Egg',
-    desc: 'we have the best Poultry meat and egg production to distribute to every corner.',
+    desc: 'We have the best Poultry meat and egg production to distribute to every corner.',
   },
 ];
 

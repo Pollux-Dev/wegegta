@@ -15,13 +15,7 @@ const Hero = () => {
             <Typography variant="h3">Business Ventures</Typography>
 
             <Typography variant="body1" className={s.desc}>
-              An agri-business venture is a business that is involved in the
-              production, processing, or distribution of agricultural products.
-              Agri-business ventures can range in size from small family farms
-              to large multinational corporations. Agri-business ventures play
-              an important role in the global economy. They provide food and
-              fiber for the world&apos;s population, and they support millions
-              of of jobs.
+            Wegegeta, as an agri-business venture, encompasses a diverse range of activities involved in the production, processing, and distribution of agricultural products. From small family farms to multinational corporations, we contribute significantly to the global economy. Our operations provide essential sustenance and fiber for the world's population while generating employment opportunities for millions. With a focus on excellence and modernization, we take pride in delivering top-notch agro-related services that cater to the unique needs of our clients and proudly represent Ethiopia on the global stage.
             </Typography>
           </Stack>
         </header>

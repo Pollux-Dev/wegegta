@@ -15,10 +15,8 @@ const Footer = () => {
             <Typography variant="h4">About us</Typography>
 
             <Typography>
-              We hope you will visit us soon and see for yourself why we are so
-              passionate about agriculture. We are confident that you will be
-              impressed with the quality of our products and the dedication of
-              our staff.
+            At Wegegeta, we excel in a wide array of agro-related services, encompassing animal husbandry, fishery, coffee safe storage, mineral processing, tourism, and import/export solutions. Embracing the essence of Ethiopian modernization, our commitment to uniqueness shines through in every aspect of our offerings. Join us on this transformative journey where tradition and innovation converge, and experience the excellence of proudly made in Ethiopia services.
+
             </Typography>
           </Stack>
         </div>

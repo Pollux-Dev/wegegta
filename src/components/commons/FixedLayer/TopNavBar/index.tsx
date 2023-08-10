@@ -16,6 +16,7 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { Language, Phone } from '@mui/icons-material';
 
+
 interface Props {
   window?: () => Window;
   children: React.ReactElement;
@@ -87,11 +88,11 @@ export default function TopNavBar() {
           <Button>
             <Stack direction="row" alignItems="center">
               <Phone />
-              <Typography>+25190000000</Typography>
+              <Typography>+251 116733233</Typography>
             </Stack>
           </Button>
 
-          <IconButton>
+          <IconButton >
             <Language />
           </IconButton>
         </div>

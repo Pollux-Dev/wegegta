@@ -31,11 +31,7 @@ const Blog = () => {
             </Typography>
 
             <Typography variant="body1" className={s.desc}>
-              Farm ecology products are a type of agricultural input that is
-              designed to improve the health and productivity of soil and crops.
-              dThey can be used to reduce the use of synthetic fertilizers and
-              pesticides, and to improve the sustainability of agricultural
-              production.
+              Wegegta is a leading agricultural company in Ethiopia. We are a team of professionals who work hard to provide our customers with the best quality products and services.
             </Typography>
           </Stack>
         </header>

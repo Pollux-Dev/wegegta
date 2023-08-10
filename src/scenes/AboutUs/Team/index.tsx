@@ -49,13 +49,7 @@ const OurMission = ({ team }: Props) => {
           </Stack>
 
           <Typography variant="body1" className={s.desc}>
-            Our team is made up of experienced farmers and ranchers who are
-            passionate about agriculture. We are committed to providing our
-            customers with the best possible service, and we are always looking
-            for new ways to improve our products and services. We hope you will
-            visit us soon and see for yourself why we are so passionate about
-            agriculture. We are confident that you will be impressed with the
-            quality of our products and the dedication of our staff.
+          At Wegegta, our team comprises highly experienced professionals who share an unwavering passion for agriculture. With dedication and enthusiasm, we strive to deliver unparalleled service to our customers. Continuous improvement is ingrained in our ethos, and we consistently explore innovative approaches to enhance our products and services. Our commitment to excellence drives us to excel in the agro industry and make a positive impact in the lives of our customers and communities we serve.
           </Typography>
         </Stack>
       </div>

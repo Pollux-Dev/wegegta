@@ -9,23 +9,23 @@ import V3 from './value-pic/Vector-2.png';
 const values = [
   {
     img: V1,
-    desc: 'A commitment to honesty, ethics, and fairness.',
-    title: 'Transparent',
+    desc: 'Our strong ability to conduct agricultural business based on the principles of the commercial sector ensures efficiency and effectiveness in our operations.',
+    title: 'Business Acumen',
   },
   {
     img: V2,
-    desc: 'A commitment to providing high-quality products or services.',
-    title: 'Commitment',
+    desc: 'We continually update our products and processes, staying at the forefront of innovation and quality by utilizing research results.',
+    title: 'Research-Driven Innovation',
   },
   {
     img: V3,
-    desc: 'A commitment to continuous improvement and innovation.',
-    title: 'Always Growing',
+    desc: 'Leveraging local production resources allows us to reduce product quality and price volatility, benefiting both producers and consumers.',
+    title: 'Local Resource Advantage',
   },
   {
     img: V3,
-    desc: 'A commitment to continuous improvement and innovation.',
-    title: 'Over Deliver',
+    desc: 'Our commitment to sustainability and environmental responsibility promotes ethical practices and fosters long-term agricultural development.',
+    title: 'Sustainable Development',
   },
 ];
 
@@ -41,10 +41,7 @@ const OurMission = () => {
           </Stack>
 
           <Typography variant="body1" className={s.desc}>
-            Company values can be a powerful tool for creating a strong company
-            culture. When employees share a common set of values, they are more
-            likely to be motivated and engaged in their work. This can lead to
-            improved productivity, customer satisfaction, and profitability.
+          Wegegta is more than an agro business venture; it is a force of positive change in Ethiopia's agricultural landscape. With a focus on commercial principles, research-driven innovations, and resourceful approaches, we redefine the agricultural sector and strive to uplift both farmers and consumers. Our dedication to sustainability and ethical practices underlines our vision for a prosperous future for Ethiopian agriculture.
           </Typography>
         </Stack>
       </div>
