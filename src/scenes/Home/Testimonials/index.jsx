@@ -56,7 +56,14 @@ const Testimonials = () => {
                     looking to improve their operation. They can provide you
                     with the resources and expertise you need to succeed in
                     today&apos;s competitive agricultural market. */}
-                    I must say, my experience with Wegegta agro services has been truly exceptional. The care and attention they put into sourcing local ingredients and incorporating modern practices reflect their commitment to quality. As a consumer, I feel confident knowing that their products support local farmers and promote the rich agricultural heritage of Ethiopia. Wegegta has undoubtedly won my trust as a reliable and forward-thinking agro business.
+                    I must say, my experience with Wegegta agro services has
+                    been truly exceptional. The care and attention they put into
+                    sourcing local ingredients and incorporating modern
+                    practices reflect their commitment to quality. As a
+                    consumer, I feel confident knowing that their products
+                    farmers and promote the rich agricultural heritage of
+                    Ethiopia. Wegegta has undoubtedly won my trust as a reliable
+                    and forward-thinking agro business.
                   </Typography>
                   <div className={s.avatar}>
                     <Avatar />

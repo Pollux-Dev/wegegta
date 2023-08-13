@@ -9,7 +9,7 @@ import FeaturedProducts from './FeaturedProducts';
 import Testimonials from './Testimonials';
 import Blog from './Blog';
 
-const Home = () => {
+const Home = ({ articles }: any) => {
   return (
     <div className={s.container}>
       <Hero />
@@ -21,7 +21,7 @@ const Home = () => {
       </div>
       <FeaturedProducts />
       <Testimonials />
-      <Blog />
+      <Blog articles={articles} />
     </div>
   );
 };

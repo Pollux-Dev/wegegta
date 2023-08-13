@@ -11,6 +11,7 @@ import '@global/index.scss';
 import { useRouter } from 'next/router';
 import { Toaster } from 'react-hot-toast';
 import { appWithTranslation } from 'next-i18next';
+import { useEffect } from 'react';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -38,8 +39,6 @@ function MyApp({
   pageProps,
   emotionCache = clientSideEmotionCache,
 }: MyAppProps) {
-  const layout = useLayout();
-
   return (
     <ContextWrapper>
       <CacheProvider value={emotionCache}>

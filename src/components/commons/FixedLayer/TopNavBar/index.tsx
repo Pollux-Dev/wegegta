@@ -8,14 +8,13 @@ import {
 } from '@mui/material';
 
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import s from './topnav.module.scss';
 import Logo from '@/public/assets/Logo_small.png';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { Language, Phone } from '@mui/icons-material';
-
 
 interface Props {
   window?: () => Window;
@@ -42,9 +41,34 @@ export default function TopNavBar() {
   // console.log('data: ', session, isTalent);
   const router = useRouter();
 
+  const googleTranslateElementInit = () => {
+    new (window as any).google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        autoDisplay: false,
+      },
+      'google_translate_element',
+    );
+  };
+
+  useEffect(() => {
+    const addScript = document.createElement('script');
+    addScript.setAttribute(
+      'src',
+      '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+    );
+    document.body.appendChild(addScript);
+    (window as any).googleTranslateElementInit = googleTranslateElementInit;
+
+    return () => {
+      document.body.removeChild(addScript);
+      delete (window as any).googleTranslateElementInit;
+    };
+  }, []);
+
   return (
     <HideOnScroll>
-      <nav className={clsx([s.container])}>
+      <nav className={clsx([s.container, 'top_nav'])}>
         <Link href="/">
           <Stack
             direction="row"
@@ -92,7 +116,7 @@ export default function TopNavBar() {
             </Stack>
           </Button>
 
-          <IconButton >
+          <IconButton id="google_translate_element">
             <Language />
           </IconButton>
         </div>
