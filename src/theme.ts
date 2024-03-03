@@ -30,7 +30,7 @@ const theme = createTheme({
   },
 
   typography: {
-    fontFamily: 'SofiaPro',
+    fontFamily: 'Nunito Sans',
     h1: {
       fontFamily: 'Gramatika',
     },
