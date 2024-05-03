@@ -51,8 +51,7 @@ const Article = ({ article, categories }: PropsType) => {
 
           <div className={s.content}>
             <ReactMarkdown
-              source={article.attributes.content}
-              escapeHtml={false}
+              children={article.attributes.content}
             />
             <hr />
           </div>

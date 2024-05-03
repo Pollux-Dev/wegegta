@@ -1,0 +1,199 @@
+[33mcommit fc9b552caf086c57164614e025d6f6f909c1b786[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Mon Mar 4 08:49:59 2024 +0300
+
+    prog: lint-fix
+
+[33mcommit d4ad5ae5f0fd54e07844a9598f92fdc47d7bcc4e[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Sun Mar 3 22:03:28 2024 +0300
+
+    prog: font changed to nunito-sans
+
+[33mcommit bd309ad4f6925914f4439266599dd42a9b8045a1[m
+Author: dawit getachew <dawitgetachewat123@gmail.com>
+Date:   Wed Aug 16 10:09:43 2023 +0300
+
+    fix: edited the title for homepage to wogegta sc and changed the favicon
+
+[33mcommit ddb1abbd72db83cb784d350af99035effd5258d5[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Sun Aug 13 07:35:38 2023 +0300
+
+    prog: blog-section are now dynamic
+
+[33mcommit 3a793acdf095e2b239ef8affaf3d5bf9c78dc0ca[m
+Author: dawit getachew <dawitgetachewat123@gmail.com>
+Date:   Thu Aug 10 16:09:32 2023 +0300
+
+    fix: i have edited the the contents
+
+[33mcommit 4789f2e69686c3671f22775dcd53693e9698cf89[m
+Author: Dawit-Getachew <69157562+Dawit-Getachew@users.noreply.github.com>
+Date:   Thu Aug 10 14:11:39 2023 +0300
+
+    Delete src/scenes/Home/Blog/\ directory
+    
+    Signed-off-by: Dawit-Getachew <69157562+Dawit-Getachew@users.noreply.github.com>
+
+[33mcommit 40fbf81f85f06851d1e55c55f7e06b2d730547ad[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Tue Jul 18 10:02:04 2023 +0300
+
+    prog: env fix
+
+[33mcommit 9aaf1b2f4557e5f4e3ba255ca96634c0e4ef250c[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Tue Jul 18 09:32:55 2023 +0300
+
+    prog: env fix
+
+[33mcommit 1184ee992d050dad8bc880ea8dbfaa919353077d[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Tue Jul 18 07:44:10 2023 +0300
+
+    prog: env fix
+
+[33mcommit a7c8cc160184852014693a34093e4647f40bd503[m[33m ([m[1;31morigin/dev[m[33m)[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Mon Jul 10 16:51:31 2023 +0300
+
+    feat: now the team is from the api
+
+[33mcommit 2971122abbb8a9769f81e0c510fb2a40a68c9a6c[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Sun Jul 9 13:31:11 2023 +0300
+
+    feat: footer fix, swiper button fix
+
+[33mcommit 8fa9cde7c0ccbcf4141b7feb21375473ba302b50[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Fri Jul 7 16:29:54 2023 +0300
+
+    feat: blog pagination added
+
+[33mcommit b8b5223848605523fbc23a1832b835391fbceed0[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Fri Jul 7 16:04:41 2023 +0300
+
+    feat: fix form-submission, added agreement
+
+[33mcommit 64436cc612180117f94388f59674b237c69941b8[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Thu Jul 6 15:24:46 2023 +0300
+
+    feat: added custom server.js config file
+
+[33mcommit c670829552dd20e3c65e46be90164ae1c7d93e06[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Thu Jul 6 14:34:34 2023 +0300
+
+    feat: migrated to only one api fetcher in all pages
+
+[33mcommit 8aba4f2bc8ef006b95a21f2a31aa883c9cd026fa[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Wed Jul 5 17:37:45 2023 +0300
+
+    feat: eslint-fix
+
+[33mcommit 7ef5dd787780b791a25559199f53c26b17c20b38[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Tue Jul 4 21:33:24 2023 +0300
+
+    feat: file-upload working
+
+[33mcommit 39987dfd8db4bfe99d23335faeb3f21783d75faf[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Tue Jul 4 21:31:33 2023 +0300
+
+    feat: file-upload working
+
+[33mcommit a5aa47c5737d3196525c45dda537fda8596d0776[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Wed Jun 28 11:18:08 2023 +0300
+
+    feat: axios config
+
+[33mcommit a9f892217de20ca1ebbd8817c3aaad2c5053038e[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Wed Jun 21 09:05:25 2023 +0300
+
+    feat: form-preview done
+
+[33mcommit f6b6b1c4e7cf7e0084c01b08265b6f6b6478d78e[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Fri Jun 9 17:11:30 2023 +0300
+
+    prog: about-us page added
+
+[33mcommit 17e9bd5b2f65fc02e2c82d474b47ff8e006625b3[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Thu Jun 8 16:08:22 2023 +0300
+
+    prog: dep fix
+
+[33mcommit 5ead3421add05ccd5fde928176084bd7ad6eb959[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Thu Jun 8 15:53:22 2023 +0300
+
+    prog: eslint-fix
+
+[33mcommit 1ac724899aa609937a9cb3de4101d5b50fe4ae51[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Thu Jun 8 15:38:49 2023 +0300
+
+    prog: venture page responsive
+
+[33mcommit 0ed48d3033a4148094e8c180f71a94e0cfaeff73[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Mon Jun 5 08:49:50 2023 +0300
+
+    prog: homepage responsive
+
+[33mcommit e02ed2daeb9efed80698597c62bea3bb756928dd[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Sat Jun 3 09:56:11 2023 +0300
+
+    prog: lint-fi
+
+[33mcommit 397bee130b20983ee06fc9421292fcb65a6a6724[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Thu Jun 1 10:34:56 2023 +0300
+
+    prog: contact-us added
+
+[33mcommit fba4a7c83947dff02d3cf9c2755200d5d282eaa2[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Thu Jun 1 10:07:38 2023 +0300
+
+    prog: blog page added
+
+[33mcommit 2cda6c51e29b6f2e3d9017a5635ac58152d7421e[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Thu Jun 1 07:59:13 2023 +0300
+
+    prog: product page added
+
+[33mcommit 8e3cf30a5af295a66cf9e99592e797bfeb54034a[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Wed May 31 13:40:24 2023 +0300
+
+    conf: home-page - d1
+
+[33mcommit 20e7e4b20e53729d2d105da5d2e603020e287600[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Tue May 30 15:07:41 2023 +0300
+
+    conf: code structur
+
+[33mcommit 86e1d95082720100b2cfee8675fc006ab7262acd[m
+Author: obinasBaba <henokgetachew500@gmail.com>
+Date:   Tue May 30 14:52:56 2023 +0300
+
+    conf: initial setup
+
+[33mcommit 899f2dd1a07fa00ba01fddbf37a45bb449c2ee78[m
+Author: henzzo <henokgetachew500@gmail.com>
+Date:   Tue May 30 14:46:04 2023 +0300
+
+    Initial commit
