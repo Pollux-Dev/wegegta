@@ -54,7 +54,7 @@ export async function getStaticProps({ params }: any) {
 
   return {
     props: {
-      article: (articlesRes as any).data[0] as ApiArticleArticle,
+      article: (articlesRes as any).data[0] as ApiArticleArticle || null,
       categories: categoriesRes as ApiCategoryCategory,
     },
     revalidate: 1,

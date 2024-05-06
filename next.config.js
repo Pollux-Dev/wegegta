@@ -15,7 +15,8 @@ const nextConfig = {
       '172.20.10.4',
       'codenight.dev',
       '172.20.10.3',
-      '0.0.0.0'
+      '0.0.0.0',
+      '49.13.2.117'
     ],
   },
   modularizeImports: {
@@ -30,17 +31,17 @@ const nextConfig = {
     },
   },
 
-  i18n: {
-    // These are all the locales you want to support in
-    // your application
-    locales: ['am', 'en'],
-    // This is the default locale you want to be used when visiting
-    // a non-locale prefixed path e.g. `/hello`
-    defaultLocale: 'en',
-    // This is a list of locale domains and the default locale they
-    // should handle (these are only required when setting up domain routing)
-    // Note: subdomains must be included in the domain value to be matched e.g. "fr.example.com".
-  },
+  // i18n: {
+  //   // These are all the locales you want to support in
+  //   // your application
+  //   locales: ['am', 'en'],
+  //   // This is the default locale you want to be used when visiting
+  //   // a non-locale prefixed path e.g. `/hello`
+  //   defaultLocale: 'en',
+  //   // This is a list of locale domains and the default locale they
+  //   // should handle (these are only required when setting up domain routing)
+  //   // Note: subdomains must be included in the domain value to be matched e.g. "fr.example.com".
+  // },
 
   //add Accept-Language: am;q=0.8 to request header
   headers: async () => {
