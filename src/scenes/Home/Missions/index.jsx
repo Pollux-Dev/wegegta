@@ -20,7 +20,7 @@ const Missions = () => {
           <div className={s.mission}>
             <Stack component='header'>
               <Image src={SubIcon} alt="grass" />
-              <Typography variant="h4">Wegegta’s Vision & Values</Typography>
+              <Typography variant="h4">Wogegta’s Vision & Values</Typography>
             </Stack>
 
             <Typography variant="body1" className={s.desc}>

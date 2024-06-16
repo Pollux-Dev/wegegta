@@ -11,11 +11,15 @@ const OurMission = () => {
         <Stack spacing={2}>
           <Stack className={s.title}>
             <Typography variant="h3">Our Mission</Typography>
-            <Typography variant="subtitle1">Wegegta</Typography>
+            <Typography variant="subtitle1">Wogegta encompasses</Typography>
           </Stack>
 
           <Typography variant="body1" className={s.desc}>
-            Our mission encompasses ethical customer service, market-research-based product supply for quality and affordability, earning foreign currency through agricultural exports, boosting indigenous productivity via research, all while ensuring effective profitability.
+          1.	<strong>Profitability:</strong> Ensure the company's sustainability and profitability. <br/>
+          2.	<strong>Customer Satisfaction:</strong> Deliver quality, affordable, and sustainable products to achieve customer satisfaction.<br/>
+          3.	<strong>Value Chain Relationships:</strong> Establish value and marketing chain relationships with farmers/pastoralists for mutual benefit.<br/>
+          4.	<strong>Organic Agriculture:</strong> Actively contribute to expanding organic agricultural production, emphasizing research and biodiversity, and providing healthier food options.<br/>
+
           </Typography>
         </Stack>
       </div>

@@ -67,7 +67,7 @@ const Footer = () => {
 
       <div className={s.copyright}>
         <Typography variant="body1">
-          © {new Date().getFullYear()} Wegegta. All rights reserved.
+          © {new Date().getFullYear()} Wogegta. All rights reserved.
         </Typography>
 
         <div className={s.socials}>

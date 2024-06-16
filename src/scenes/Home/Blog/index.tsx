@@ -130,9 +130,10 @@ const Blog = ({ articles }: { articles: any[] }) => {
             </Typography>
 
             <Typography variant="body1" className={s.desc}>
-              Wegegta is a leading agricultural company in Ethiopia. We are a
+              Wogegta is a leading agricultural company in Ethiopia. Wogegta Agriculture Business Share Company is poised to make a significant impact on the agricultural and business sectors by addressing existing challenges, fostering sustainable practices, and contributing to the overall development of the community. Through its diverse range of activities and commitment to ethical values, Wogegta aims to be a driving force in transforming the agricultural landscape and ensuring the prosperity of all stakeholders involved.
+            {/* We are a
               team of professionals who work hard to provide our customers with
-              the best quality products and services.
+              the best quality products and services. */}
             </Typography>
           </Stack>
         </header>

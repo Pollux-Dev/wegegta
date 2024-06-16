@@ -49,7 +49,7 @@ const OurMission = ({ team }: Props) => {
           </Stack>
 
           <Typography variant="body1" className={s.desc}>
-          At Wegegta, our team comprises highly experienced professionals who share an unwavering passion for agriculture. With dedication and enthusiasm, we strive to deliver unparalleled service to our customers. Continuous improvement is ingrained in our ethos, and we consistently explore innovative approaches to enhance our products and services. Our commitment to excellence drives us to excel in the agro industry and make a positive impact in the lives of our customers and communities we serve.
+          At Wogegta, our team comprises highly experienced professionals who share an unwavering passion for agriculture. With dedication and enthusiasm, we strive to deliver unparalleled service to our customers. Continuous improvement is ingrained in our ethos, and we consistently explore innovative approaches to enhance our products and services. Our commitment to excellence drives us to excel in the agro industry and make a positive impact in the lives of our customers and communities we serve.
           </Typography>
         </Stack>
       </div>

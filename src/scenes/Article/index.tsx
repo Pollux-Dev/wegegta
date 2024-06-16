@@ -36,7 +36,7 @@ const Article = ({ article, categories }: PropsType) => {
             >
               <Avatar>W</Avatar>
               <Stack>
-                <Typography variant="subtitle1">wegegta</Typography>
+                <Typography variant="subtitle1">wogegta</Typography>
                 <Typography>
                   Published -{' '}
                   <Moment format="MMM Do YYYY">

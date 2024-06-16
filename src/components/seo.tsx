@@ -9,7 +9,7 @@ const Seo = ({ seo }: any) => {
   };
   const fullSeo = {
     ...seoWithDefaults, // Add title suffix
-    metaTitle: `${seoWithDefaults.metaTitle} | 'wegegta'}`, // Get full image URL
+    metaTitle: `${seoWithDefaults.metaTitle} | 'wogegta'}`, // Get full image URL
     shareImage: getStrapiMedia(seoWithDefaults.shareImage),
   };
 

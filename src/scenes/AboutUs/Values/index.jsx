@@ -37,11 +37,18 @@ const OurMission = () => {
         <Stack spacing={2}>
           <Stack className={s.title}>
             <Typography variant="h3">Our Company Values</Typography>
-            <Typography variant="subtitle1">Wegegta</Typography>
+            <Typography variant="subtitle1">Wogegta</Typography>
           </Stack>
 
           <Typography variant="body1" className={s.desc}>
-          Wegegta is more than an agro business venture; it is a force of positive change in Ethiopia's agricultural landscape. With a focus on commercial principles, research-driven innovations, and resourceful approaches, we redefine the agricultural sector and strive to uplift both farmers and consumers. Our dedication to sustainability and ethical practices underlines our vision for a prosperous future for Ethiopian agriculture.
+          Wogegta Agriculture Business Share Company is guided by the following values:<br/><br/>
+          1.	<strong>Benefit for All:</strong> Belief in the collective benefit of the country's wealth.<br/>
+          2.	<strong>Authenticity:</strong> Upholding genuine and honest practices.<br/>
+          3.	<strong>Transparency:</strong> Operating with openness and clarity.<br/>
+          4.	<strong>Customer Orientation:</strong> Prioritizing customer needs and satisfaction.<br/>
+          5.	<strong>Affordability and Quality:</strong> Providing products that are both affordable and of high quality.<br/>
+          6.	<strong>Unity and Solidarity:</strong> Fostering a spirit of collaboration.<br/>
+
           </Typography>
         </Stack>
       </div>
